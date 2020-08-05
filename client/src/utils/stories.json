@@ -1,0 +1,9 @@
+[
+    {
+        "title": "story title here",
+        "story": "actual story here",
+        "prompts": "[adj, noun, verb, specifuic to each story/blanks",
+        "category": "category here",
+        "language": "Spanish or English"
+    }
+]
