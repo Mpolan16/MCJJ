@@ -3,7 +3,7 @@
         "title": "story title here",
         "story": "actual story here",
         "prompts": "[adj, noun, verb, specifuic to each story/blanks",
-        "category": "category here",
+        "category": "category here: no need to use this for MVP since only one story",
         "language": "Spanish or English"
     }
 ]
