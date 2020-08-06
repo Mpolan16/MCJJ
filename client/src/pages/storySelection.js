@@ -8,7 +8,9 @@ import {Link} from "react-router-dom";
 function StorySelection() {
     return(
         <div>
-            <p>Select language here, select category here</p>
+            <p>Select language here, select category here?</p>
+            {/* radio buttons for spanish or english stories, category, length */}
+
             <Link to = "/create">
                 Generate a MadLib
             </Link>
