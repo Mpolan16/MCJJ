@@ -20,23 +20,23 @@ function StorySelection() {
                 </label>
             </div>
 
-            <h3>Select length:</h3>
+            <h3>Select Category:</h3>
             <div className="btn-group btn-group-toggle" data-toggle="buttons">
                 
                 <label className="btn btn-secondary active">
-                    <input type="radio" name="options" id="option1" checked /> One Paragraph
+                    <input type="radio" name="options" id="cat1" checked /> Funny Story
                 </label>
                 <label className="btn btn-secondary">
-                    <input type="radio" name="options" id="option2" /> Two Paragraphs
+                    <input type="radio" name="options" id="cat2" /> Scary Story
                 </label>
                 <label className="btn btn-secondary">
-                    <input type="radio" name="options" id="option3" /> Three Paragraphs
+                    <input type="radio" name="options" id="cat3" /> ??????
                 </label>
             </div>
             <br></br>
 
             <Link to = "/create">
-                Generate a (fill in name)
+                Generate my (fill in name)
             </Link>
         </div>
     );
