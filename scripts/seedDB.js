@@ -50,3 +50,5 @@ db.StoryTemplates.remove({})
 // //     .catch(err => {
 // //       res.json(err);
 // //     });
+
+export default storySeed;

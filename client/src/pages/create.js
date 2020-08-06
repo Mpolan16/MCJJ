@@ -5,11 +5,11 @@ import Voice from "../components/voice";
 // import stories from "../utils/stories.json";
 
 
-function Create() {
+function Created() {
     return(
         <div>
             <p>Generated Madlib</p>
-            {/* this is where they enter the words?? and click submit */}
+      
             {/* here we add the code for the generated madlib */}
             <SaveLib />
 
@@ -21,5 +21,5 @@ function Create() {
 }
 
 
-export default Create;
+export default Created;
 
