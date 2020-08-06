@@ -6,8 +6,8 @@ function Home() {
         <div>
             <p>home: Welcome to MadLibs</p>
             {/* put an image here */}
-            <Link to = "/create">
-                complete a MadLib
+            <Link to = "/storySelection">
+                pick Story selection before Generating a MadLib
             </Link>
         </div>
     );
