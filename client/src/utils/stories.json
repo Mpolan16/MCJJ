@@ -5,5 +5,12 @@
         "prompts": "[(1)Last name, (2)preterite verb, él/ella form, (3) Number greater than one, (4) name of a person, (5)noun that refers to a person, (6) singular noun, (7)imperfect verb, él/ella form, (8)preterite verb, él/ella form, (9)Definite article + noun,(10) preterite verb, él/ella form ,(11) plural noun,(12)present tense verb, *they form,(13)emotion]",
         "category": "scary story",
         "language": "Spanish"
+    },
+    {
+        "title": "Vacations",
+        "story": "A vacation is when you take a trip to some (1)________ place with your (2)__________ family. Usually you go to some place that is near a/an (3)_________. A good vacation place is one where you can ride (4)________ or play (5)________ or go hunting for (6)__________. I like to spend my time (7)______or (8)________.",
+        "prompts": "[(1) adjective,(2) adjective,(3)noun,(4)noun,(5)plural noun,(6)game,(7)plural noun,(8) verd ending in ING]",
+        "category": "funny story",
+        "language": "English"
     }
 ]
