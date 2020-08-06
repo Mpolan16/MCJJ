@@ -8,12 +8,42 @@ import {Link} from "react-router-dom";
 function StorySelection() {
     return(
         <div>
-            <p>Select language here, select category here</p>
+            {/* radio buttons for spanish or english stories, category, length */}
+            <h3>Select language:</h3>
+            <div className="btn-group btn-group-toggle" data-toggle="buttons">
+                
+                <label className="btn btn-secondary active">
+                    <input type="radio" name="options" id="lang1" checked /> English
+                </label>
+                <label className="btn btn-secondary">
+                    <input type="radio" name="options" id="lang2" /> Spanish
+                </label>
+            </div>
+
+            <h3>Select length:</h3>
+            <div className="btn-group btn-group-toggle" data-toggle="buttons">
+                
+                <label className="btn btn-secondary active">
+                    <input type="radio" name="options" id="option1" checked /> One Paragraph
+                </label>
+                <label className="btn btn-secondary">
+                    <input type="radio" name="options" id="option2" /> Two Paragraphs
+                </label>
+                <label className="btn btn-secondary">
+                    <input type="radio" name="options" id="option3" /> Three Paragraphs
+                </label>
+            </div>
+            <br></br>
+
             <Link to = "/create">
-                Generate a MadLib
+                Generate a (fill in name)
             </Link>
         </div>
     );
 }
 
 export default StorySelection;
+
+
+// not sure where to put these
+//$().button('toggle')
