@@ -1,12 +1,13 @@
-import React from "react";
+import React, {Component} from "react";
 //import React, { useEffect } from "react";
-import SaveLib from "../components/saveLib";
-import Voice from "../components/voice";
+import SaveLib from "../components/savedLibs";
 // import {Link} from "react-router-dom";
 // import stories from "../utils/stories.json";
 
 
-function Created() {
+class Created extends Component {
+
+
 
     //   useEffect(() => {
     //         // For demonstration purposes, we mock an API call.
@@ -17,18 +18,28 @@ function Created() {
     //         });
     //       }, []);    
 
-    return(
-        <div>
-            <p>Generated Madlib</p>            
-      
-            {/* here we add the code for the generated madlib */}
-            <SaveLib />
+    //make API call to mongo to get 
 
-
-            <Voice />
-        </div>
+    render() {
+        return(
+            <div>
+                <p>Generated Madlib</p>            
         
-    );
+                {/* here we add the code for the generated madlib */}
+                <SaveLib />
+                {/* save, delete, and create new buttons with onclick functions 
+                should these be buttons or components */}
+
+                <button id = "save">Save this Story</button>
+                <button id = "delete">Delete this Story</button>
+                <Link to = "/storySelection">Pick another story</Link>
+
+
+               
+            </div>
+            
+        );
+    }
 }
 
 

@@ -33,9 +33,10 @@ function StorySelection() {
                     <input type="radio" name="options" id="cat3" /> ??????
                 </label>
             </div>
-            <br></br>
 
-            <Link to = "/create">
+            <br></br>
+           
+            <Link to = "/wordEntry">
                 Generate my (fill in name)
             </Link>
         </div>
@@ -46,4 +47,3 @@ export default StorySelection;
 
 
 // not sure where to put these
-//$().button('toggle')
