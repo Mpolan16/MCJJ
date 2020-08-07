@@ -8,6 +8,7 @@ import SaveLib from "../components/savedLibs";
 class Created extends Component {
 
 
+    //component did mount
 
     //   useEffect(() => {
     //         // For demonstration purposes, we mock an API call.
@@ -17,6 +18,8 @@ class Created extends Component {
     //           console.log(res);
     //         });
     //       }, []);    
+    //no square brackets makes it go every time the page renders
+    //when certain data changes put the name of the state in the square brackets
 
     //make API call to mongo to get 
 
@@ -32,7 +35,7 @@ class Created extends Component {
 
                 <button id = "save">Save this Story</button>
                 <button id = "delete">Delete this Story</button>
-                <Link to = "/storySelection">Pick another story</Link>
+                <a href = "/storySelection">Pick another story</a>
 
 
                

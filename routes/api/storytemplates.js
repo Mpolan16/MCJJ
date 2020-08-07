@@ -24,4 +24,9 @@ router
     .route("/language/:language")  
     .get(storyTemplatesController.findTemplatesByLanguage);   
 
+
+// router
+//     .route("/api/storytemplates")  
+//     .get(storyTemplatesController.findAllTemplates); 
+
 module.exports = router;
