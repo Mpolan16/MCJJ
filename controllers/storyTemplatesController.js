@@ -17,10 +17,10 @@ module.exports = {
           .catch(err => res.status(422).json(err));
     },  
     findAllTemplates: function(req, res) {
-        console.log("findall");
+        //console.log("findall");
         db.StoryTemplates.find({}) //empty object returns all?
         .then(dbModel =>{
-            console.log("hello", dbModel);
+            //console.log("hello", dbModel);
             res.json(dbModel)})
         .catch(err => res.status(422).json(err));
     },    
@@ -38,7 +38,12 @@ module.exports = {
         db.StoryTemplates.find({ language: req.params.language })
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
-    },          
+    }, 
+    findTemplatesByCategoryAndLanguage: function(req, res) {        
+        db.StoryTemplates.find({ category: req.params.category, language: req.params.language })
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
+    },              
     updateTemplateById: function(req, res) {
         db.StoryTemplates.findOneAndUpdate({ _id: req.params.id }, req.body) //need to be destructured?
         .then(dbModel => res.json(dbModel))

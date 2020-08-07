@@ -64,6 +64,10 @@ export default {
   getTemplatesByLanguage: function(language) {
     return axios.get("/api/storytemplates/language/" + language);
   },
+  //Gets all templates for a specific category AND language
+  getTemplatesByCategoryAndLanguage: function(category, language) {
+    return axios.get("/api/storytemplates/catlang/" + category + "/" + language);
+  },
   /******************/
   /*End template data*/
   /******************/  
