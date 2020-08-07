@@ -32,7 +32,7 @@ class Created extends Component {
 
                 <button id = "save">Save this Story</button>
                 <button id = "delete">Delete this Story</button>
-                <Link to = "/storySelection">Pick another story</Link>
+                <a href = "/storySelection">Pick another story</a>
 
 
                
