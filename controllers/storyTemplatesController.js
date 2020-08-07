@@ -17,8 +17,11 @@ module.exports = {
           .catch(err => res.status(422).json(err));
     },  
     findAllTemplates: function(req, res) {
+        console.log("findall");
         db.StoryTemplates.find({}) //empty object returns all?
-        .then(dbModel => res.json(dbModel))
+        .then(dbModel =>{
+            console.log("hello", dbModel);
+            res.json(dbModel)})
         .catch(err => res.status(422).json(err));
     },    
     findTemplatesById: function(req, res) {

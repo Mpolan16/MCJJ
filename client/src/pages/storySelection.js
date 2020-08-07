@@ -9,35 +9,40 @@ function StorySelection() {
     return(
         <div>
             {/* radio buttons for spanish or english stories, category, length */}
-            <h3>Select language:</h3>
-            <div className="btn-group btn-group-toggle" data-toggle="buttons">
-                
-                <label className="btn btn-secondary active">
-                    <input type="radio" name="options" id="lang1" checked /> English
-                </label>
-                <label className="btn btn-secondary">
-                    <input type="radio" name="options" id="lang2" /> Spanish
-                </label>
-            </div>
+            <div>
+                <h3>Select language:</h3>
+                <div className="btn-group btn-group-toggle" data-toggle="buttons">
+            
+                    <label className="btn btn-secondary">
+                        <input type="radio" name="language" id="lang1" /> English
+                    </label>
+                    <label className="btn btn-secondary">
+                        <input type="radio" name="language" id="lang2" /> Spanish
+                    </label>
 
-            <h3>Select Category:</h3>
-            <div className="btn-group btn-group-toggle" data-toggle="buttons">
-                
-                <label className="btn btn-secondary active">
-                    <input type="radio" name="options" id="cat1" checked /> Funny Story
-                </label>
-                <label className="btn btn-secondary">
-                    <input type="radio" name="options" id="cat2" /> Scary Story
-                </label>
-                <label className="btn btn-secondary">
-                    <input type="radio" name="options" id="cat3" /> ??????
-                </label>
+                </div>
+            </div>
+            <div>
+                <h3>Select Category:</h3>
+                <div className="btn-group btn-group-toggle" data-toggle="buttons">
+                    
+                    <label className="btn btn-secondary">
+                        <input type="radio" name="category" id="cat1"  /> Funny Story
+                    </label>
+                    <label className="btn btn-secondary">
+                        <input type="radio" name="category" id="cat2" /> Scary Story
+                    </label>
+                    <label className="btn btn-secondary">
+                        <input type="radio" name="category" id="cat3" /> ??????
+                    </label>
+
+                </div>
             </div>
 
             <br></br>
            
             <Link to = "/wordEntry">
-                Generate my (fill in name)
+                Now enter the missing words
             </Link>
         </div>
     );

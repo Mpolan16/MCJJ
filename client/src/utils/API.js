@@ -41,6 +41,7 @@ export default {
   },
   //Gets all templates
   getTemplates: function() {
+    console.log("gettemplates");
     return axios.get("/api/storytemplates");
   },  
   //Gets a specific template by id

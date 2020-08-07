@@ -1,8 +1,11 @@
-import React, { useEffect } from "react";
-import { PromiseProvider } from "mongoose";
-import { prompts } from "../../scripts/seedDB"
+import React, { useEffect, useState, Link } from "react";
+// import { PromiseProvider } from "mongoose";
+// import { prompts } from "../../scripts/seedDB"
 import Voice from "../components/voice";
-import API from "../../utils/API";
+import API from "../utils/API";
+import List from "../components/List";
+import ListItem from "../components/ListItem";
+
 
 
 function WordEntry() {
@@ -17,40 +20,46 @@ function WordEntry() {
 
     function getAllStories() {
         API.getTemplates()
-          .then(res => setStories(res.data))
+          .then(res => {
+              console.log(res)
+              setStories(res.data)
+            })
           .catch(err => console.log(err));
       }
     
 
     return(
-        <div>
-            <p>inputs for each blank</p>
+        // <div>
+        //     <p>inputs for each blank</p>
 
-            {stories.length ? (
-              <List>
-                {stories.map(story => {
-                  return (
-                    <ListItem key={story._id}>
+        //     {stories.length ? (
+        //       <List>
+        //         {stories.map(story => {
+        //           return (
+        //             <ListItem key={story._id}>
                      
-                     <input type="text" class="form-control" placeholder= {story.prompts} aria-label="word" aria-describedby="basic-addon1" />
-
-                 
+        //              <input type="text" class="form-control" placeholder= {story.prompts} aria-label="word" aria-describedby="basic-addon1" />
                     
-                    </ListItem>
-                  );
-                })}
-              </List>
+        //             </ListItem>
+        //           );
+        //         })}
+        //       </List>
 
-            ):(
-                <h3>Story can't be found</h3>
+        //     ):(
+        //         <h3>Story can't be found</h3>
             
-            )}
+        //     )}
       
-            <Voice />
+        //     <Voice />
 
-            <Link to = "/create">
-                Generate my (fill in name)
-            </Link>
+        //     <Link to = "/create">
+        //         Generate my (fill in name)
+        //     </Link>
+        // </div>
+
+        <div>
+            hello
+            <p>inputs for each blank</p>
         </div>
     );
 }
