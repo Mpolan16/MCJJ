@@ -24,6 +24,11 @@ router
     .route("/language/:language")  
     .get(storyTemplatesController.findTemplatesByLanguage);   
 
+// Matches with "/api/storytemplates/catlang/:category/:language"
+router
+    .route("/catlang/:category/:language")  
+    .get(storyTemplatesController.findTemplatesByCategoryAndLanguage);  
+
 
 // router
 //     .route("/api/storytemplates")  
