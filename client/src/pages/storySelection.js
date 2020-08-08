@@ -41,9 +41,17 @@ function StorySelection() {
 
             <br></br>
            
-            <Link to = "/wordEntry">
+            <Link to={{
+                pathname: '/create',
+                state: {
+                    category: "funny story",
+                    language: "English"
+                }
+            }}>Now enter the missing words</Link>
+
+            {/* <Link to = "/create">
                 Now enter the missing words
-            </Link>
+            </Link> */}
         </div>
     );
 }

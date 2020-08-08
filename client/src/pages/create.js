@@ -1,25 +1,38 @@
 import React, { useEffect, useState } from "react";
-import SaveLib from "../components/saveLib";
-import Voice from "../components/voice";
+import {withRouter} from "react-router-dom";
+//import {Link} from "react-router-dom";  --use LINK if using to call another page
+//import SaveLib from "../components/saveLibs";
+//import Voice from "../components/voice";
 import API from "../utils/API.js";
-import Accents from "../components/getAccents.js";
+//import Accents from "../components/getAccents.js";
 
 
 
-function Create() {
+function Create(props) {
     const [words, setWords] = useState(null)
     const [userValues, setUserValues] = useState({});
     const [story, setStory] = useState({})
     const [userStory, setUserStory] = useState();
 
+    useEffect(() => {        
+        // console.log("Category",props.location.state.category)    
+        // console.log("Language",props.location.state.language)    
 
-    useEffect(() => {
-        API.getTemplateById("5f2dcf43ea7ebd39e0cf8676").then((res) => {
-            console.log(res);
-            console.log(res.data.prompts);
+        API.getTemplateById("5f2eb96decadf8418428bd52").then((res) => {
+            // console.log(res);
+            // console.log(res.data.prompts);
             setStory({ details: res.data.story, title: res.data.story })
             setWords(res.data.prompts)
         });
+
+        // API.getTemplatesByCategoryAndLanguage("funny story","English").then((res) => {
+        //     console.log(res.data);
+        //     // console.log(res.data.prompts);
+        //     // setStory({ details: res.data.story, title: res.data.story })
+        //     // setWords(res.data.prompts)
+        // });
+
+
     }, []);
 
     const onChange = (e) => {
@@ -89,5 +102,5 @@ function Create() {
     );
 }
 
-export default Create;
+export default withRouter(Create);
 
