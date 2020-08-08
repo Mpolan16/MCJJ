@@ -3,7 +3,8 @@ import React, { useEffect, useState } from "react";
 import SaveLib from "../components/saveLib";
 import Voice from "../components/voice";
 import API from "../utils/API.js";
-import Speech from "../components/textToSpeech.js";
+import Accents from "../components/getAccents.js";
+
 
 
 function Create() {
@@ -65,7 +66,7 @@ function Create() {
                         </p>
                         <button>Save</button>
                         <button>New Template</button>
-                        <button onClick={Speech}>Read</button>
+                        {/* <button onClick={getAccents}>Read</button> */}
 
                         <label for="rate">Rate</label>
                         <div id="rate-value" className="badge">1</div>
@@ -80,7 +81,7 @@ function Create() {
                 )
             }
             <div className="form-group">
-                <select id="voice-select" className="form-control" style={{ maxWidth: "500px" }}></select>
+                <select id="voice-select" className="form-control" style={{ width: "500px" }}></select>
             </div>
             <button className="btn"></button>
 
