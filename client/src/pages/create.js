@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import SaveLib from "../components/saveLib";
-import Voice from "../components/voice";
+// import SavedLib from "../components/savedLib";
+// import Voice from "../components/voice";
 import API from "../utils/API.js";
-import Accents from "../components/getAccents.js";
+// import Accents from "../components/getAccents.js";
 
 
 
