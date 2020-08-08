@@ -41,7 +41,7 @@ function StorySelection() {
 
             <br></br>
            
-            <Link to = "/wordEntry">
+            <Link to = "/create">
                 Now enter the missing words
             </Link>
         </div>
