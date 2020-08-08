@@ -41,6 +41,7 @@ export default {
   },
   //Gets all templates
   getTemplates: function() {
+    console.log("gettemplates");
     return axios.get("/api/storytemplates");
   },  
   //Gets a specific template by id
@@ -62,6 +63,10 @@ export default {
   //Gets all templates for a specific category
   getTemplatesByLanguage: function(language) {
     return axios.get("/api/storytemplates/language/" + language);
+  },
+  //Gets all templates for a specific category AND language
+  getTemplatesByCategoryAndLanguage: function(category, language) {
+    return axios.get("/api/storytemplates/catlang/" + category + "/" + language);
   },
   /******************/
   /*End template data*/
