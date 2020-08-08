@@ -6,6 +6,7 @@ const db = require("../models");
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/project3");
 
 const storySeed = [
+
   {
     "title": "El Ataque del Zombie",
     "story": "Un día terrible, el Dr.(1)_________, un científico malo, hizo un experimento. Él puso contaminantes tóxicos en el cuerpo de un estudiante muerto, y así creó el primer zombie. El zombie se despertó y salió del laboratorio del Doctor. El zombie (2)________y aterrorizó a millones de personas por (3)___________días. Nadie sabía qué hacer...nadie sino(4)________.Su (5)________fue la primera victima del zombie y por eso él/ella buscaba venganza. (4)__________ siempre llevaba un/a (6)__________ para destruir la criatura horrorosa. Un día, (4)_____________ (7)_____________ por las calles de su ciudad cuando escuchó un grito. Él/Ella miro hacia atrás y vió el zombie que había matado a su (5)____________! Rápidamente, él/ella agarró el/la (6)________ y (8)___________ hacia el zombie. Gritó <<(9)__________!>> y lo pegó con el/la (6)______. El zombie (10)____________. Antes de morir, el zombie dijo, <<(11)__________ (12)____________ >>. (4)_______________ se sentía (13)_____________.",
