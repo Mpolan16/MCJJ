@@ -38,7 +38,7 @@ function Create() {
 
         for (let i = 0; i < words.length; i++) {
             console.log({ userValues })
-            userStory = userStory.replace("___", userValues[i])
+            userStory = userStory.replace("___", userValues[i] || "___")
         }
 
         setUserStory(userStory)
