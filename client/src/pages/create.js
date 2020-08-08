@@ -6,8 +6,6 @@ import {withRouter} from "react-router-dom";
 import API from "../utils/API.js";
 //import Accents from "../components/getAccents.js";
 
-
-
 function Create(props) {
     const [words, setWords] = useState(null)
     const [userValues, setUserValues] = useState({});
