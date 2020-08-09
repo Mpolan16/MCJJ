@@ -15,24 +15,28 @@ function Create(props) {
     const [story, setStory] = useState({})
     const [userStory, setUserStory] = useState();
 
-    useEffect(() => {        
+
+
+    useEffect(() => {  
+        
+        console.log(props);
         // console.log("Category",props.location.state.category)    
         // console.log("Language",props.location.state.language)    
 
-        API.getTemplateById("5f2eb96decadf8418428bd52").then((res) => {
-            // console.log(res);
-            // console.log(res.data.prompts);
+        // API.getTemplateById("5f2f5364fd5ba7031ccd93d9").then((res) => {
+        //     console.log(res);
+        //     //console.log(res.data[0].prompts);
 
-            setStory({ details: res.data.story, title: res.data.story })
-            setWords(res.data.prompts)
-        });
-
-        // API.getTemplatesByCategoryAndLanguage("funny story","English").then((res) => {
-        //     console.log(res.data);
-        //     // console.log(res.data.prompts);
         //     // setStory({ details: res.data.story, title: res.data.story })
         //     // setWords(res.data.prompts)
         // });
+
+        API.getTemplatesByCategoryAndLanguage(props.location.state.cat, props.location.state.lang).then((res) => {
+            console.log(res);
+             console.log(res.data.prompts);
+             setStory({ details: res.data[0].story, title: res.data[0].title })
+             setWords(res.data[0].prompts)
+        });
 
 
     }, []);
@@ -91,11 +95,11 @@ function Create(props) {
                     </>
                 )
             }
-            <label for="rate">Rate</label>
+            <label htmlFor="rate">Rate</label>
             <div id="rate-value" className="badge">1</div>
             <input type="range" id="rate" className="custom=range" min="0.5" max="2" defaultValue="1" step="0.1"></input>
 
-            <label for="pitch">Pitch</label>
+            <label htmlFor="pitch">Pitch</label>
             <div id="pitch-value" className="badge">1</div>
             <input type="range" id="pitch" className="custom=range" min="0" max="2" defaultValue="1" step="0.1"></input>
 
