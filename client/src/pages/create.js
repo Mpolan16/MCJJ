@@ -33,7 +33,7 @@ function Create(props) {
 
         API.getTemplatesByCategoryAndLanguage(props.location.state.cat, props.location.state.lang).then((res) => {
             console.log(res);
-             console.log(res.data.prompts);
+            console.log(res.data.prompts);
              setStory({ details: res.data[0].story, title: res.data[0].title })
              setWords(res.data[0].prompts)
         });
