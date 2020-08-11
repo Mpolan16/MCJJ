@@ -9,6 +9,17 @@ import Footer from './components/footer.js';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import StorySelection from './pages/storySelection.js';
 
+// New Routes
+import LandingPage from './components/Landing';
+import SignUpPage from './components/SignUp';
+import SignInPage from './components/SignIn';
+import PasswordForgetPage from './components/PasswordForget';
+import AccountPage from './components/Account';
+import AdminPage from './components/Admin';
+ 
+import * as ROUTES from './constants/routes.js';
+
+
 
 
 class App extends Component {
@@ -18,12 +29,17 @@ class App extends Component {
         <div>
           <Nav />
           <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/home" component={Home} />
             {/* <Route exact path="/favorites/:id" component={FavoritesList} /> */}
-            <Route exact path="/create" component={Create} />
-            <Route exact path="/storySelection" component={StorySelection} />
             {/* <Route component={NoMatch} /> */}
+            <Route exact path={ROUTES.CREATE} component={Create} />
+            <Route exact path={ROUTES.STORYSEL} component={StorySelection} />
+            <Route exact path={ROUTES.LANDING} component={LandingPage} />
+            <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
+            <Route path={ROUTES.SIGN_IN} component={SignInPage} />
+            <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} />
+            <Route path={ROUTES.HOME} component={Home} />
+            <Route path={ROUTES.ACCOUNT} component={AccountPage} />
+            <Route path={ROUTES.ADMIN} component={AdminPage} />
           </Switch>
           <Footer />
         </div>

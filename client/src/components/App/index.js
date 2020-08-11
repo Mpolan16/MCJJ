@@ -1,9 +1,9 @@
 import React from 'react';
  
-const App = () => (
+const AppNotsure = () => (
   <div>
-    <h1>App</h1>
+    <h1>AppNotsure</h1>
   </div>
 );
  
-export default App;
+export default AppNotSure;
