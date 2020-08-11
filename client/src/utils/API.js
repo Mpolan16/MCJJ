@@ -86,8 +86,19 @@ export default {
   //Removes a template by id
   deleteSavedStory: function(id) {
     return axios.delete("/api/savedstories/" + id);
-  }
+  },
   /******************/
   /*End template data*/
   /******************/   
+
+  /******************/
+  /*Begin parts of speech data*/
+  /******************/
+  //Inserts a new saved story
+  getAllPartsOfSpeech: function() {
+    return axios.get("/api/partsofspeech");
+  }
+  /******************/
+  /*End parts of speech data*/
+  /******************/     
 };

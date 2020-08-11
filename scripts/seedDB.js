@@ -26,7 +26,7 @@ const storySeed = [
 db.StoryTemplates.remove({})
   .then(() => db.StoryTemplates.collection.insertMany(storySeed))
   .then(data => {
-    console.log(data.result.n + " records inserted!");
+    console.log(data.result.n + " story records inserted!");
     process.exit(0);
   })
   .catch(err => {
@@ -34,13 +34,44 @@ db.StoryTemplates.remove({})
     process.exit(1);
   });
 
-// db.Users.create({userid: "jtest@hotmail.com", password: "test" })
-//   .then(dbUser => {
-//     console.log(dbUser);
-//   })
-//   .catch(({ message }) => {
-//     console.log(message);
-//   });
+
+
+
+//PartsOfSpeech
+const partsOfSpeechSeed = [
+  {
+    "partOfSpeech": "Noun"
+  },
+  {
+    "partOfSpeech": "Adjective"
+  },
+  {
+    "partOfSpeech": "Adverb"
+  },
+  {
+    "partOfSpeech": "Verb"
+  }    
+];
+
+db.PartsOfSpeech.remove({})
+  .then(() => db.PartsOfSpeech.collection.insertMany(partsOfSpeechSeed))
+  .then(data => {
+    console.log(data.result.n + " parts of speech records inserted!");
+    process.exit(0);
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
+
+
+db.Users.create({userid: "jtest@hotmail.com", password: "test" })
+  .then(dbUser => {
+    console.log(dbUser);
+  })
+  .catch(({ message }) => {
+    console.log(message);
+  });
 
 // db.StoryTemplates.create({story: "this is a test story", prompts: ["adjective","verb"] })
 //     .then(({ _id }) => db.Users.findOneAndUpdate({userid: "jtest@hotmail.com"}, { $push: {storytemplates: _id } }, { new: true }))
@@ -51,3 +82,4 @@ db.StoryTemplates.remove({})
 // //     .catch(err => {
 // //       res.json(err);
 // //     });
+
