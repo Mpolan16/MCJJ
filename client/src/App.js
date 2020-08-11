@@ -8,6 +8,7 @@ import Nav from './components/nav.js';
 import Footer from './components/footer.js';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import StorySelection from './pages/storySelection.js';
+import CreateTemplate from './pages/createTemplate.js';
 
 
 
@@ -23,6 +24,7 @@ class App extends Component {
             {/* <Route exact path="/favorites/:id" component={FavoritesList} /> */}
             <Route exact path="/create" component={Create} />
             <Route exact path="/storySelection" component={StorySelection} />
+            <Route exact path="/createTemplate" component={CreateTemplate} />            
             {/* <Route component={NoMatch} /> */}
           </Switch>
           <Footer />
