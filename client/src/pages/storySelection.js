@@ -29,7 +29,7 @@ function StorySelection() {
 
     return(
         <div>
-            {/* radio buttons for spanish or english stories, category, length */}
+            
           
                 <h3>Select language:</h3>
                 <div className="btn-group btn-group-toggle" data-toggle="buttons">
@@ -56,6 +56,10 @@ function StorySelection() {
                     <label className="btn btn-secondary">
                         <input onClick = {setCategory} type="radio" name="category" id="cat3" value = "Fables" /> Fables
                     </label>
+                    {/* Only shows up if Spanish is chosen
+                    <label className="btn btn-secondary">
+                        <input onClick = {setCategory} type="radio" name="category" id="cat4" value = "Cuentos" /> Fables
+                    </label> */}
 
                 </div>
            
