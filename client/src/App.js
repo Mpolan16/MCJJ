@@ -17,35 +17,12 @@ import AccountPage from './components/Account';
 import AdminPage from './components/Admin';
  
 import * as ROUTES from './constants/routes.js';
-import { withFirebase } from './Firebase';
-
-class App extends Component {
-  constructor(props) {
-    super(props);
+import { withAuthentication } from '../Session';
  
-    this.state = {
-      authUser: null,
-    };
-  }
-
-  componentDidMount() {
-    this.listener = this.props.firebase.auth.onAuthStateChanged(
-      authUser => {
-      authUser
-        ? this.setState({ authUser })
-        : this.setState({ authUser: null });
-    });
-  }
-
-  componentWillUnmount() {
-    this.listener();
-  }
-
-  render() {
-    return (
+const App = () => (
       <Router basename="/">
         <div>
-          <Nav authUser={this.state.authUser} />
+          <Nav />
           <Switch>
             {/* <Route exact path="/favorites/:id" component={FavoritesList} /> */}
             {/* <Route component={NoMatch} /> */}
@@ -62,8 +39,6 @@ class App extends Component {
           <Footer />
         </div>
       </Router>
-    );
-  }
-}
-
-export default withFirebase(App);
+);
+ 
+export default withAuthentication(App);
