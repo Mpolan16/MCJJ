@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import Login from './components/login.js';
 import Home from './pages/home.js';
 import Create from './pages/create.js';
 import Nav from './components/nav.js';
@@ -18,16 +17,35 @@ import AccountPage from './components/Account';
 import AdminPage from './components/Admin';
  
 import * as ROUTES from './constants/routes.js';
-
-
-
+import { withFirebase } from './Firebase';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+ 
+    this.state = {
+      authUser: null,
+    };
+  }
+
+  componentDidMount() {
+    this.listener = this.props.firebase.auth.onAuthStateChanged(
+      authUser => {
+      authUser
+        ? this.setState({ authUser })
+        : this.setState({ authUser: null });
+    });
+  }
+
+  componentWillUnmount() {
+    this.listener();
+  }
+
   render() {
     return (
       <Router basename="/">
         <div>
-          <Nav />
+          <Nav authUser={this.state.authUser} />
           <Switch>
             {/* <Route exact path="/favorites/:id" component={FavoritesList} /> */}
             {/* <Route component={NoMatch} /> */}
@@ -48,4 +66,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withFirebase(App);
