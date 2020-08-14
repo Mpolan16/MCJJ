@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
-import Home from './pages/home.js';
-import Create from './pages/create.js';
-import Nav from './components/nav.js';
+
+// import Login from './components/login.js';
+import Home from './pages/Home/home.js';
+import Create from './pages/CreateStory/createStory.js';
+import Nav from './components/Nav/nav.js';
 // import FavoritesList from './components/favoritesList.js';
 // import NoMatch from "./pages/noMatch";
-import Footer from './components/footer.js';
+import Footer from './components/Footer/footer.js';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import StorySelection from './pages/storySelection.js';
+import StorySelection from './pages/StorySelection/storySelection.js';
+import CreateTemplate from './pages/CreateTemplate/createTemplate.js';
 
 // New Routes
 import LandingPage from './components/Landing';
@@ -25,6 +28,7 @@ const App = () => (
           <Nav />
           <Switch>
             {/* <Route exact path="/favorites/:id" component={FavoritesList} /> */}
+            <Route exact path="/createTemplate" component={CreateTemplate} />            
             {/* <Route component={NoMatch} /> */}
             <Route exact path={ROUTES.CREATE} component={Create} />
             <Route exact path={ROUTES.STORYSEL} component={StorySelection} />

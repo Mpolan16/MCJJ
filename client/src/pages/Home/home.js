@@ -11,6 +11,11 @@ function Home() {
             <Link to = "/storySelection">
                 Click here to select options for your story
             </Link>
+            <br>
+            </br>
+            <Link to = "/createTemplate">
+                Click here to create a template
+            </Link>
         </div>
     );
 }
