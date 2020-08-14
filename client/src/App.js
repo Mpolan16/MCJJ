@@ -28,7 +28,7 @@ const App = () => (
           <Nav />
           <Switch>
             {/* <Route exact path="/favorites/:id" component={FavoritesList} /> */}
-            <Route exact path="/createTemplate" component={CreateTemplate} />            
+            <Route exact path={ROUTES.CREATETEMPLATE} component={CreateTemplate} />           
             {/* <Route component={NoMatch} /> */}
             <Route exact path={ROUTES.CREATE} component={Create} />
             <Route exact path={ROUTES.STORYSEL} component={StorySelection} />
