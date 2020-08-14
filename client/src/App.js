@@ -17,7 +17,7 @@ import AccountPage from './components/Account';
 import AdminPage from './components/Admin';
  
 import * as ROUTES from './constants/routes.js';
-import { withAuthentication } from '../Session';
+import { withAuthentication } from './components/Session';
  
 const App = () => (
       <Router basename="/">
@@ -42,3 +42,5 @@ const App = () => (
 );
  
 export default withAuthentication(App);
+
+

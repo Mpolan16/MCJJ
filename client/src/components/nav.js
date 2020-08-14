@@ -6,7 +6,7 @@ import * as ROUTES from '../constants/routes';
  
 import { AuthUserContext } from './Session';
  
-const Navigation = () => (
+const Nav = () => (
   <div>
     <AuthUserContext.Consumer>
       {authUser =>
