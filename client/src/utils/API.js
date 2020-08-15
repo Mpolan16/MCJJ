@@ -21,8 +21,8 @@ export default {
     return axios.delete("/api/users/" + id);
   },
   // Gets all templates for a given id (an id will also have a userid)
-  getTemplatesByUser: function(id) {
-    return axios.get("/api/users/templates/" + id);
+  getTemplatesByUser: function(userid) {
+    return axios.get("/api/users/templates/" + userid);
   },
   // Gets all saved stories for a given id
   getSavedStoriesByUser: function(id) {
@@ -41,7 +41,6 @@ export default {
   },
   //Gets all templates
   getTemplates: function() {
-    console.log("gettemplates");
     return axios.get("/api/storytemplates");
   },  
   //Gets a specific template by id
@@ -49,12 +48,12 @@ export default {
     return axios.get("/api/storytemplates/" + id);
   },    
   //Updates a template by id
-  updateTemplate: function(id, templateData) {
-    return axios.put("/api/storytemplates/" + id, templateData);
+  updateTemplate: function(templateData) {    
+    return axios.put("/api/storytemplates/" + templateData.id, templateData);
   },  
   //Removes a template by id
-  deleteTemplate: function(id) {
-    return axios.delete("/api/storytemplates/" + id);
+  deleteTemplate: function(templateData) {
+    return axios.delete("/api/storytemplates/" + templateData.id, {data: {userid: templateData.userid}});
   },  
   //Gets all templates for a specific category
   getTemplatesByCategory: function(category) {

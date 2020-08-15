@@ -17,8 +17,8 @@ router
 
 // Matches with "/api/users/templates/:id"
 router
-    .route("/templates/:id")  
-    //.route("/users/templates/:id")  
+    .route("/templates/:userid")  
+    //.route("/users/templates/:userid")  
     .get(usersController.findTemplatesByUser);  
 
 // Matches with "/api/users/stories/:id"
