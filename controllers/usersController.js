@@ -31,7 +31,7 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },  
   findTemplatesByUser: function(req, res) {
-    db.Users.find({ _id: req.params.id }) //need to pass by userid instead?
+    db.Users.find({ userid: req.params.userid })
       .populate("storytemplates")
       .then(dbModel => res.json(dbModel))
       //console.log(dbModel[0].storytemplates[0].story);
