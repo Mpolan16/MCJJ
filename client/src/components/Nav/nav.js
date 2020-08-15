@@ -17,7 +17,6 @@ const Nav = () => (
 );
 
 
- 
 const NavigationAuth = () => (
   <ul>
       <Link to={ROUTES.LANDING}> MadLibs</Link>
