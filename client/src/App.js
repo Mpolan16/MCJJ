@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 // import Login from './components/login.js';
 import Home from './pages/Home/home.js';
-import Create from './pages/CreateStory/createStory.js/index.js.js';
+import Create from './pages/CreateStory/createStory.js';
 import Nav from './components/Nav/nav.js';
 // import FavoritesList from './components/favoritesList.js';
 // import NoMatch from "./pages/noMatch";
 import Footer from './components/Footer/footer.js';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import StorySelection from './pages/StorySelection/storySelection.js/index.js';
-import CreateTemplate from './pages/CreateTemplate/createTemplate.js/index.js';
-
+import StorySelection from './pages/StorySelection/storySelection.js';
+import CreateTemplate from './pages/CreateTemplate/createTemplate.js';
+import './App.css';
 
 
 class App extends Component {
