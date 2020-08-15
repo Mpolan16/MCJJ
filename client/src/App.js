@@ -11,6 +11,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import StorySelection from './pages/StorySelection/storySelection.js';
 import CreateTemplate from './pages/CreateTemplate/createTemplate.js';
 
+import './App.css';
+
 // New Routes
 import LandingPage from './components/Landing';
 import SignUpPage from './components/SignUp';
