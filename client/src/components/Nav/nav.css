@@ -8,11 +8,6 @@ ul {
     text-align: end;
 }
 
-.navbar-brand {
-    
-    color:  rgb(250, 66, 143);
-}
-
 li {
     margin: 10px;
     display: inline-block;
@@ -20,5 +15,5 @@ li {
 }
 
 a {
-    color: rgb(250, 66, 143);
+    color: rgb(250, 66, 143) !important;
 }

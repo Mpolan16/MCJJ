@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 // import Login from './components/login.js';
 import Home from './pages/Home/home.js';
@@ -10,7 +10,7 @@ import Footer from './components/Footer/footer.js';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import StorySelection from './pages/StorySelection/storySelection.js';
 import CreateTemplate from './pages/CreateTemplate/createTemplate.js';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 // New Routes
