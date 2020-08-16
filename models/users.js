@@ -3,7 +3,6 @@ const Schema = mongoose.Schema;
 
 const usersSchema = new Schema({
   userid: { type: String, required: true, unique: true },
-  password: { type: String, required: true },
   storytemplates: [
     {
       type: Schema.Types.ObjectId,
