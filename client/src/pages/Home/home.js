@@ -1,13 +1,23 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import { withAuthorization } from '../../components/Session';
+import "./home.css";
+import Image from 'react-bootstrap/Image';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
 
 function Home() {
     return(
-        <div>
-            <p>home: Welcome to MadLibs</p>
+        <Container>
+            <h1>Welcome to ____</h1>
+            <Row>
+                <Image src = "../../Assets/hero.png" fluid />
+            </Row>
+     
+            
+            
             <p>The Home Page is accessible by every signed in user.</p>
-            {/* put an image here */}
+           
             <Link to = "/storySelection">
                 Click here to select options for your story
             </Link>
@@ -16,7 +26,8 @@ function Home() {
             <Link to = "/createTemplate">
                 Click here to create a template
             </Link>
-        </div>
+        </Container>
+        
     );
 }
 

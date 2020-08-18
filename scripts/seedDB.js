@@ -63,7 +63,10 @@ const partsOfSpeechSeed = [
   },
   {
     "partOfSpeech": "Verb"
-  }
+  },
+  {
+    "partOfSpeech": "Name Of A City"
+  }      
 ];
 
 db.PartsOfSpeech.remove({})
