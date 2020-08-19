@@ -26,19 +26,19 @@ function Create(props) {
         // console.log("Category",props.location.state.category)    
         // console.log("Language",props.location.state.language)    
 
-        // API.getTemplateById("5f3b37adca4c3b3d844a3166").then((res) => {
+        API.getTemplateById("5f3c63244944b44690617d74").then((res) => {
 
-        //     setStory({ details: res.data.story, title: res.data.story })
-        //     setWords(res.data.prompts)
-        //     setTemplate(res.data.story)
-        // });
-
-        API.getTemplatesByCategoryAndLanguage(props.location.state.cat, props.location.state.lang).then((res) => {
-            console.log(res);
-            console.log(res.data.prompts);
-            setStory({ details: res.data[0].story, title: res.data[0].title })
-            setWords(res.data[0].prompts)
+            setStory({ details: res.data.story, title: res.data.story })
+            setWords(res.data.prompts)
+            setTemplate(res.data.story)
         });
+
+        // API.getTemplatesByCategoryAndLanguage(props.location.state.cat, props.location.state.lang).then((res) => {
+        //     console.log(res);
+        //     console.log(res.data.prompts);
+        //     setStory({ details: res.data[0].story, title: res.data[0].title })
+        //     setWords(res.data[0].prompts)
+        // });
 
 
     }, []);
@@ -61,17 +61,18 @@ function Create(props) {
         let styledStory = story.details;
 
         for (let i = 0; i < words.length; i++) {
+            userStory = userStory.replace("___", userValues[i] || "blank");
+
             const placeholder = "(" + i + ")___";
+            styledStory = styledStory.replace("___", placeholder)
             if (!userValues[i]) {
                 userValues[i] = "blank"
             }
-            userStory = userStory.replace(placeholder, userValues[i] || "___");
-            styledStory = styledStory.split(placeholder).join("<button class='inputWords' onclick='translate()'>" + userValues[i] + "</button>");
+            styledStory = styledStory.split(placeholder).join("<button class='inputWords'>" + userValues[i] + "</button>");
         }
 
-        setTemplate(styledStory)
+        setTemplate(styledStory);
         setUserStory(userStory);
-
     }
 
     return (
