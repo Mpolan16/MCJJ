@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
- 
+import "./admin.css" 
 import { withFirebase } from '../Firebase';
  
 class AdminPage extends Component {
@@ -49,7 +49,7 @@ class AdminPage extends Component {
 }
 
 const UserList = ({ users }) => (
-  <ul>
+  <ul id = "userList">
     {users.map(user => (
       <li key={user.uid}>
         <span>
