@@ -9,12 +9,12 @@ function TwoButtonDropdownModal(props) {
         <Modal id="twobtnmodal" show={props.show} 
         onHide={props.onHide}
         backdrop="static">
-            <Modal.Header closeButton>
+            <Modal.Header id="header" closeButton>
                 <Modal.Title>{props.title}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <div id="body">
-                    <select
+                    <select id="selectDropdown"
                         onChange={props.onChange}
                         value={props.value}>
                         {props.dropDownValues.map(currentItem =>( <option key={currentItem._id} value={currentItem._id}>{currentItem.title}</option>))}

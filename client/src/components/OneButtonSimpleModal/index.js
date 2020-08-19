@@ -9,7 +9,7 @@ function OneButtonSimpleModal(props) {
         <Modal id="onebtnmodal" show={props.show} 
         onHide={props.onHide}
         backdrop="static">
-            <Modal.Header closeButton>
+            <Modal.Header id="header" closeButton>
                 <Modal.Title>{props.title}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
