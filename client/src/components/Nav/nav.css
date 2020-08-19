@@ -1,6 +1,4 @@
 
-
-
 ul {
     background-color: rgb(0, 9, 128);
     width: 100%;
@@ -16,4 +14,9 @@ li {
 
 a {
     color: rgb(250, 66, 143) !important;
+}
+
+#title {
+    float: left;
+    color:rgb(250, 66, 143) !important;
 }

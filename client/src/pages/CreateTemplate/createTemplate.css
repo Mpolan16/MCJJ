@@ -1,0 +1,12 @@
+#templateEntry {
+    height: 250px;
+    width: 490px;
+    resize: none;
+}
+.noentry {
+    color: red
+}
+
+#btnSave {
+    width: 130px
+}
