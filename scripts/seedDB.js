@@ -15,7 +15,7 @@ const storySeed = [
   },
   {
     "title": "Vacations",
-    "story": "A vacation is when you take a trip to some (0)___ place with your (1)___ family. Usually you go to some place that is near a/an (2)___. A good vacation place is one where you can ride (3)___ or play (4)___ or go hunting for (5)___. I like to spend my time (6)___ or (7)___.",
+    "story": "A vacation is when you take a trip to some ___ place with your ___ family. Usually you go to some place that is near a/an ___. A good vacation place is one where you can ride ___ or play ___ or go hunting for ___. I like to spend my time ___ or ___.",
     "prompts": ["(1)adjective", "(2)adjective", "(3)noun", "(4)noun", "(5)plural noun", "(6)game", "(7)plural noun", "(8)verb ending in ING"],
     "category": "Funny",
     "language": "English"
@@ -29,7 +29,7 @@ const storySeed = [
   },
   {
     "title": "A Look Into Your Future",
-    "story": "You tell your parents goodnight and the next morning when you wake up you it is the year 1___. Life is not what you expected. If you 2___ too loudly, you will be put in isolation. This room has 3___ oozing from the walls. No light or windows and you are only fed 4___. Otherwise you must spend your day making 5___ to make the Emperor 6___ happy. You join the 7___ warriors to try and take over the throne. Sadly, the 8___ weapons you had were easily destroyed by the Emperor's warriors. You wonder home to make new plans. You fall asleep on your desk and awake the next morning in your bedroom and your mother is calling you down for breakfast.  ",
+    "story": "You tell your parents goodnight and the next morning when you wake up you it is trun e year 1___. Life is not what you expected. If you 2___ too loudly, you will be put in isolation. This room has 3___ oozing from the walls. No light or windows and you are only fed 4___. Otherwise you must spend your day making 5___ to make the Emperor 6___ happy. You join the 7___ warriors to try and take over the throne. Sadly, the 8___ weapons you had were easily destroyed by the Emperor's warriors. You wonder home to make new plans. You fall asleep on your desk and awake the next morning in your bedroom and your mother is calling you down for breakfast.  ",
     "prompts": ["(1)year in the future", "(2)verb", "(3)noun-thing", "(4)plant", "(5)noun-thing", "(6)name", "(7)name", "(8)adjective",],
     "category": "Scary",
     "language": "English"
@@ -66,7 +66,7 @@ const partsOfSpeechSeed = [
   },
   {
     "partOfSpeech": "Name Of A City"
-  }      
+  }
 ];
 
 db.PartsOfSpeech.remove({})

@@ -1,12 +1,13 @@
 import React, { Component } from "react";
-
+import Translator from "./translate.js"
 import '../pages/CreateStory/createStory.css';
-
 // import { translateAliases } from "../../../models/users";
 let synth = window.speechSynthesis;
 let voices = [];
 
-  
+
+
+
 
 class SpeechContainer extends Component {
     state = {
@@ -14,12 +15,20 @@ class SpeechContainer extends Component {
         rate: 1,
     }
 
+
+
     componentDidMount = () => {
         window.addEventListener('beforeunload', this.componentCleanup);
         this.getAccents();
         if (synth.onvoiceschanged !== undefined) {
             synth.onvoiceschanged = this.getAccents;
         };
+
+        let inputWords = document.querySelectorAll(".inputWords");
+        for (let i = 0; i < inputWords.length; i++) {
+            inputWords[i].addEventListener("click", () => this.speakWord(inputWords[i].textContent));
+        }
+
     }
 
     componentWillUnmount = () => {
@@ -32,13 +41,12 @@ class SpeechContainer extends Component {
     }
 
     getAccents = () => {
-
         const voiceSelect = document.querySelector("#voice-select");
 
         voices = synth.getVoices();
         voices.forEach(voice => {
             const option = document.createElement("option");
-            option.textContent = voice.name
+            option.textContent = voice.name;
 
             option.setAttribute("data-lang", voice.lang);
             option.setAttribute("data-name", voice.name);
@@ -53,7 +61,6 @@ class SpeechContainer extends Component {
 
     Speak = (userStory, voices) => {
 
-        // Translator();
 
         console.log(this.props.styledStory)
 
@@ -82,12 +89,12 @@ class SpeechContainer extends Component {
             if (voices[i].name === selectedVoice) {
                 speakStory.voice = voices[i];
                 speakStory.lang = voices[i].lang;
-                speakStory.volume = 1;
             }
         }
 
         speakStory.rate = this.state.rate;
         speakStory.pitch = this.state.pitch;
+        speakStory.volume = 1;
 
         console.log(speakStory)
 
@@ -99,6 +106,12 @@ class SpeechContainer extends Component {
             else synth.resume();
         }, 4000);
     };
+
+    speakWord = (clickedWord) => {
+        const speakWord = new SpeechSynthesisUtterance(clickedWord);
+        synth.speak(speakWord);
+
+    }
 
 
     changeRate = (e) => {
@@ -121,9 +134,9 @@ class SpeechContainer extends Component {
         synth.pause();
     }
 
-    // translate = (e) => {
-    //     console.log("hiiiiiii")
-    // }
+
+
+
 
     render() {
 
@@ -134,15 +147,19 @@ class SpeechContainer extends Component {
                 <button onClick={() => synth.cancel()} className="read-btns">Stop</button>
                 <button onClick={() => this.Pause()} className="read-btns">Pause/Resume</button>
                 <button onClick={() => this.Speak(this.props.story, voices)} className="read-btns">Read</button>
-               
-                    <label className="slider-label" htmlFor="rate">Rate</label>
-                    <div id="rate-value" className="badge">{this.state.rate}</div>
-                    <input onChange={this.changeRate} value={this.state.value} className="slider" type="range" id="rate" min="0" max="2" defaultValue="1" step="0.1"></input>
 
+                <div className="slider-div">
+                    <label className="slider-label" htmlFor="rate">Rate</label>
+                    <div id="rate-value" className="badge" htmlFor="rate">{this.state.rate}</div>
+                    <input onChange={this.changeRate} value={this.state.value} className="slider" type="range" id="rate" min="0" max="2" defaultValue="1" step="0.1"></input>
+                </div>
+
+                <div className="slider-div">
                     <label className="slider-label" htmlFor="pitch">Pitch</label>
-                    <div id="pitch-value" className="badge">{this.state.pitch}</div>
+                    <div id="pitch-value" className="badge" htmlFor="pitch">{this.state.pitch}</div>
                     <input onChange={this.changePitch} value={this.state.value} className="slider" type="range" id="pitch" min="0" max="2" defaultValue="1" step="0.1"></input>
-  
+                </div>
+
                 <div className="form-group">
                     <select id="voice-select" className="form-control" style={{ width: "500px" }}></select>
                 </div>
