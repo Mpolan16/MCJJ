@@ -1,0 +1,28 @@
+#partsOfSpeechDiv {
+    /* margin-top: 100px;     */   
+    text-align: center; 
+}
+
+#listPartsOfSpeech {
+    overflow-y: scroll;
+    height: 384px;
+    border:solid 1px;
+}
+
+.partOfSpeech {
+    margin-bottom: 2px;
+    background: rgb(0, 9, 128);
+    color: rgb(250, 66, 143);
+    width: 75%;
+    margin: 3px auto;
+    text-align: center;
+    border-radius: 25px; 
+    opacity:0.9;   
+}
+
+.partOfSpeech:hover {
+    opacity:1;
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }

@@ -36,29 +36,3 @@
     transform: rotate(360deg);
   }
 }
-
-
-
-
-
-.drag-container {
-  text-align: center;
-}
-
-.other-container {
-  text-align: center;
-}
-
-.head {
-  display: inline-block;
-  margin: 0;
-  padding: 0;
-  background-color: #CCCCCC;
-  width:100%;
-}
-
-#templateEntry {
-  height: 200px;
-  width: 400px;
-  resize: none;
-}

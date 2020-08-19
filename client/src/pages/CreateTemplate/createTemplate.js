@@ -1,21 +1,17 @@
-//TODOS:
-//
-//where is the userid coming from?
-//error handling if user doesnt enter title and/or text
-//put the resets and save modal in a funciton...starting line 135.  One for insert, one for update, one for delete.
-//modularize
-//change the category dropdown if spanish chosen?
-//css
-
-
 import React, { useState, useEffect} from "react";
 import { useForm } from "react-hook-form";
 import API from "../../utils/API";
-import '../../App.css'
+import firebase from "firebase";
+import './createTemplate.css'
 import TwoButtonDropdownModal from "../../components/TwoButtonDropdownModal";
 import OneButtonSimpleModal from "../../components/OneButtonSimpleModal";
+import PartsOfSpeechList from "../../components/PartsOfSpeechList"
+import CreateTemplateSidebar from "../../components/CreateTemplateSidebar"
 
-function CreateTemplate() {
+function CreateTemplate() { 
+  
+  const [currentUser, setCurrentUser] = useState(); 
+
   const [partsOfSpeech, setPartsOfSpeech] = useState({
     partOfSpeech: []
   });  
@@ -51,8 +47,20 @@ function CreateTemplate() {
 
 
   useEffect(() => {
+    async function getCurrentUser() {
+      try {
+        await firebase.auth().onAuthStateChanged(function(user) {
+          if (user) {
+            setCurrentUser(user.email)            
+          }
+        })        
+      }
+      catch (err) {
+          console.log(err);
+        }
+    }
+    getCurrentUser();
     APIgetAllPartsOfSpeech();
-    APIgetAllTemplatesByUser("jtest@hotmail.com");  //hardcoded!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  need to figure out where userid is coming from
   }, []);
 
   const APIgetAllPartsOfSpeech = () => {
@@ -100,10 +108,10 @@ function CreateTemplate() {
         splitStory = res.data.story.split(" ");
         for (let i=0; i<splitStory.length; i++) {          
           if(splitStory[i].indexOf( "___") >= 0) {  //returns -1 if not found.
-            //the original value that is returned will look like ex. (1)Noun or (2)Name Of City.  this line removes the numbers in parens and replaces with
-            //##.  (ex (1)Noun becomes ##Noun and (2)Name Of City becomes ##Name Of City).  Additionally, if a prompt has spaces, those are replaced with _.
-            //(ex ##Name Of City becomes ##Name_Of_City)
-            splitStory[i] = replaceSpacesWithUnderscore("##" + res.data.prompts[promptCounter].substring(res.data.prompts[promptCounter].indexOf(")") + 1));            
+            //if a prompt has spaces, those are replaced with _.  Add ## at the beginning to signify a prompt
+            let currentPrompt = replaceSpacesWithUnderscore(res.data.prompts[promptCounter])            
+            currentPrompt = "##" + currentPrompt
+            splitStory[i] = splitStory[i].replace("___", currentPrompt);
             promptCounter++
           }
         }
@@ -119,13 +127,15 @@ function CreateTemplate() {
 
   const APIinsertNewTemplate = (data) => {
 
+    //console.log(data)
+
     API.insertTemplate({
       title: data.title,
       story: data.story,
       prompts: data.prompts,
       category: data.category,
       language: data.language,
-      userid: "jtest@hotmail.com"     //need to consider this!!!!!!! - where is the userid coming from???
+      userid: currentUser
     })
       .then(res => {       
         if (res.data.status === "error") {
@@ -135,7 +145,7 @@ function CreateTemplate() {
         resetPage("save")
       })
       .catch(err => console.log(err));  
-    }
+  }
 
   const resetPage = (saveOrDelete) => {
     if (saveOrDelete === "save") {
@@ -154,8 +164,19 @@ function CreateTemplate() {
     setValue("language", "English"); 
     setValue("category", "Funny");           
     setButtonModalState({closeBtnText: "Close"})
-    APIgetAllTemplatesByUser("jtest@hotmail.com");  //hardcoded!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  need to figure out where userid is coming from
+    APIgetAllTemplatesByUser(currentUser);
     handleShowSuccessModal();
+  }
+
+  const prepareNewTemplate = () => {
+    setTemplate({
+      id: "",
+      text: ""
+    });
+    //reset back to empty values.
+    setValue("title", "");
+    setValue("language", "English"); 
+    setValue("category", "Funny");  
   }
 
   const APIupdateExistingTemplate = (data) => {
@@ -189,9 +210,9 @@ function CreateTemplate() {
 
   const handleShowSuccessModal = () => setShowSuccessModal(true);
   const handleCloseSuccessModal = () => setShowSuccessModal(false);
-
   const handleCloseTemplateModal = () => setShowTemplateModal(false);
   const handleShowTemplateModal = (event) => {
+    APIgetAllTemplatesByUser(currentUser)
     if (event.target.id === "btnDelete") {
       setButtonModalState({title: "Delete A Template", closeBtnText: "Close", selectBtnText: "Delete"})
     }
@@ -321,7 +342,6 @@ function CreateTemplate() {
   const saveTemplate = (data) => {
     let individualWords = []
     let prompts = []
-    let promptCounter = 1
     let promptPart = ""
     let stringFound = 0
     let anotherPromptFound = 0
@@ -340,12 +360,10 @@ function CreateTemplate() {
           //if code gets in here, that means most likely a new line or a punctuation.
           //break it down into just the prompt piece (ex, so "##Noun." should be "##Noun" )
           promptPart = replaceUnderscoreWithSpaces(individualWords[i].substring(0,stringFound))
-          //put the prompt into the prompt array.  (ex. "##Noun" should be saved as "(1)Noun")
-          prompts.push("(" + promptCounter + ")" + promptPart.substring(2,promptPart.length))        
+          //put the prompt into the prompt array.  (ex. "##Noun" should be saved as "Noun")
+          prompts.push(promptPart.substring(2,promptPart.length))        
           //replace the prompt only with the ___ (ex. "##Noun." should be saved as "___."")
           individualWords[i] = individualWords[i].replace(promptPart,"___")
-          //increment the prompt counter.
-          promptCounter++          
 
           //extreme edge case.  if there happens to be more than one prompt in 'part', then need to replace that one too.  This assumes
           //that correct grammar has been used - ie, there are spaces where they are supposed to be.
@@ -353,29 +371,21 @@ function CreateTemplate() {
           anotherPromptFound = individualWords[i].search('##')
           if (anotherPromptFound > 0) {
             promptPart = replaceUnderscoreWithSpaces(individualWords[i].substring(anotherPromptFound,individualWords[i].length))
-            //put the prompt into the prompt array.  (ex. "##Noun" should be saved as "(1)Noun")
-            prompts.push("(" + promptCounter + ")" + promptPart.substring(2,promptPart.length))        
-            //replace the prompt only with the ___ (ex. "##Noun." should be saved as "___."")
-           
+            //put the prompt into the prompt array.  (ex. "##Noun" should be saved as "Noun")
+            prompts.push(promptPart.substring(2,promptPart.length))        
+            //replace the prompt only with the ___ (ex. "##Noun." should be saved as "___."")           
             individualWords[i] = individualWords[i].replace(promptPart,"___")
-            //increment the prompt counter.
-            promptCounter++
           }
         }
         else {
           promptPart = replaceUnderscoreWithSpaces(individualWords[i].substring(2,individualWords[i].length))                  
-          //Otherwise, the prompt appears in the middle of a sentence.  Put the part of speech into the prompts array, 
-          //and increment the prompt counter (for the count inside the "()" thingie - should look like "(1)Noun")        
-          prompts.push("(" + promptCounter + ")" + promptPart)        
-
+          //Otherwise, the prompt appears in the middle of a sentence.  Put the part of speech into the prompts array   
+          prompts.push(promptPart)
           //replace the word with ___
-          individualWords[i] = "___"
-          //increment the prompt counter.
-          promptCounter++
+          individualWords[i] = "___"          
         }
       }
     }
-
 
     //put the paragraph back together like humpty dumpty
     builtParagraph = individualWords.join(" ")
@@ -387,7 +397,7 @@ function CreateTemplate() {
       prompts: prompts,
       category: data.category,
       language: data.language,
-      userid: "jtest@hotmail.com"     //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!need to consider this!!!!!!! - where is the userid coming from???      
+      userid: currentUser
     }
     
     //if the id is undefined or if the id is "", that should mean that this is a new template
@@ -403,55 +413,47 @@ function CreateTemplate() {
   const deleteTemplate = () => {   
       const objectToPass = {
       id: templateID,      
-      userid: "jtest@hotmail.com"     //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!need to consider this!!!!!!! - where is the userid coming from???      
+      userid: currentUser
     }
     APIdeleteExistingTemplate(objectToPass)    
   };
 
-  //need to modularize
   return (
-
-    <div className="other-container">
-      <div className="drag-container">
-          <h2 className="head">Parts Of Speech</h2>
-          <div className="PartsOfSpeech">              
-              <span className="group-header">list of parts</span>                
-              {partsOfSpeech.partOfSpeech.map(partOfSpeech =>(
-                <div key={partOfSpeech._id}
-                  onDragStart={onDragStart}
-                  onDoubleClick={onDoubleClick}
-                  draggable
-                  className="draggable"
-                  data-name={partOfSpeech.partOfSpeech}>
-                    {partOfSpeech.partOfSpeech}
-                </div>
-              ))}
-          </div>            
-          <br></br>
-          <form onSubmit={handleSubmit(saveTemplate)}>
-            <label htmlFor="title">Title:</label>
+    <div className="drag-container">
+      <div className="row">
+        <div className="col-md-2">
+        </div>
+        <div className="col-md-4">
+          <form onSubmit={handleSubmit(saveTemplate)}>
+            <label className="mt-1 mr-1" htmlFor="title">Title:</label>
             <input name="title" 
               aria-invalid={errors.title ? "true" : "false"}              
               ref={register({ required: true })}/>
               { errors.title && (
-                  <span role="alert">
-                    This field is required
-                  </span>
+                  <>
+                    <br></br>
+                    <span class="noentry" role="alert">
+                      The title is required!
+                    </span>
+                  </>
                 )
-              }            
-            <label htmlFor="category">Category:</label>
-            <select ref={register} name="category">
+              }
+            <br></br>
+            <label className="mt-1 mr-1" htmlFor="category">Category:</label>
+            <select className="mt-1" ref={register} name="category">
               <option value="Funny">Funny</option>
               <option value="Scary">Scary</option>
               <option value="Fables">Fables</option>              
               <option value="Cuentos">Cuentos</option>              
             </select>
-            <label htmlFor="language">Language:</label>
-            <select ref={register} name="language">
+            <br></br>        
+            <label className="mt-1 mr-1" htmlFor="language">Language:</label>
+            <select className="mt-1" ref={register} name="language">
               <option value="English">English</option>
               <option value="Spanish">Spanish</option>
-            </select>
-            <br></br>         
+            </select>  
+            <br></br>     
+            <label htmlFor="text">Story:</label>    
             <textarea className="droppable"
                 id="templateEntry"
                 onDragOver={onDragOver}
@@ -465,48 +467,55 @@ function CreateTemplate() {
                 ref={register({ required: true })}>
             </textarea>
             { errors.text && (
-                  <span role="alert">
-                    This field is required
-                  </span>
+                  <>
+                    <br></br>
+                    <span className="noentry" role="alert">
+                      A story is required!
+                    </span>
+                  </>
                 )
               }          
             <br></br>            
-            <input type="submit" />
+            {/* <input className="btn btn-primary mb-3" type="submit"/> */}
+            <button id="btnSave" className="btn btn-primary mt-2">
+              Save Template
+            </button>
           </form>
-          <br></br>
-          <br></br>          
-          <button id="btnDelete" className="btn btn-primary mb-3" onClick={handleShowTemplateModal}>
-            Delete Template
-          </button>
+        </div>    
+        <div className="col-md-2">
+          <PartsOfSpeechList
+            partsOfSpeech={partsOfSpeech}
+            onDragStart={onDragStart}
+            onDoubleClick={onDoubleClick}/>
+        </div> 
+        <div className="col-md-2">
+          <CreateTemplateSidebar 
+            newTemplate={prepareNewTemplate}
+            updateTemplate={handleShowTemplateModal}
+            deleteTemplate={handleShowTemplateModal}/>
+        </div>        
+      </div>       
 
-          <button id="btnUpdate" className="btn btn-primary mb-3" onClick={handleShowTemplateModal}>
-            Launch update modal
-          </button>          
+      <TwoButtonDropdownModal
+        title={buttonModalState.title}
+        show={showTemplateModal}
+        onHide={handleCloseTemplateModal}
+        onChange={onTemplateDropDownClick}
+        value={templateID}
+        dropDownValues={userTemplates.userTemplates}
+        onClickClose={handleCloseTemplateModal}
+        onClickSelect={handleSelectTemplateModal}
+        closeButtonText={buttonModalState.closeBtnText}
+        selectButtonText={buttonModalState.selectBtnText}/>
 
-          <TwoButtonDropdownModal
-            title={buttonModalState.title}
-            show={showTemplateModal}
-            onHide={handleCloseTemplateModal}
-            onChange={onTemplateDropDownClick}
-            value={templateID}
-            dropDownValues={userTemplates.userTemplates}
-            onClickClose={handleCloseTemplateModal}
-            onClickSelect={handleSelectTemplateModal}
-            closeButtonText={buttonModalState.closeBtnText}
-            selectButtonText={buttonModalState.selectBtnText}/>
-
-          <OneButtonSimpleModal
-            title={successModalState.title}
-            show={showSuccessModal}
-            onHide={handleCloseSuccessModal}            
-            body={successModalState.body}
-            onClickClose={handleCloseSuccessModal}            
-            closeButtonText={buttonModalState.closeBtnText}/>      
-            
-
-      </div>    
-    </div>
-    
+      <OneButtonSimpleModal
+        title={successModalState.title}
+        show={showSuccessModal}
+        onHide={handleCloseSuccessModal}            
+        body={successModalState.body}
+        onClickClose={handleCloseSuccessModal}            
+        closeButtonText={buttonModalState.closeBtnText}/>          
+    </div>    
   );
 }
 

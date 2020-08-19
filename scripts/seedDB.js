@@ -79,8 +79,56 @@ const partsOfSpeechSeed = [
     "partOfSpeech": "Verb"
   },
   {
-    "partOfSpeech": "Name Of A City"
-  }      
+    "partOfSpeech": "City"
+  },      
+  {
+    "partOfSpeech": "Plural Noun"
+  },        
+  {
+    "partOfSpeech": "Part Of The Body"
+  },      
+  {
+    "partOfSpeech": "Place"
+  },        
+  {
+    "partOfSpeech": "Number"
+  },        
+  {
+    "partOfSpeech": "First Name Male"
+  },      
+  {
+    "partOfSpeech": "First Name Female"
+  },        
+  {
+    "partOfSpeech": "Article Of Clothing"
+  },        
+  {
+    "partOfSpeech": "Country"
+  },      
+  {
+    "partOfSpeech": "Celebrity"
+  },        
+  {
+    "partOfSpeech": "Age"
+  },        
+  {
+    "partOfSpeech": "Liquid"
+  },        
+  {
+    "partOfSpeech": "Emotion"
+  },   
+  {
+    "partOfSpeech": "Food"
+  },             
+  {
+    "partOfSpeech": "Verb Ending In -ing"
+  },
+  {
+    "partOfSpeech": "Occupation"
+  },
+  {
+    "partOfSpeech": "Animal"
+  }  
 ];
 
 db.PartsOfSpeech.remove({})
@@ -95,13 +143,13 @@ db.PartsOfSpeech.remove({})
   });
 
 
-db.Users.create({ userid: "jtest@hotmail.com", password: "test" })
-  .then(dbUser => {
-    console.log(dbUser);
-  })
-  .catch(({ message }) => {
-    console.log(message);
-  });
+// db.Users.create({ userid: "jtest@hotmail.com", password: "test" })
+//   .then(dbUser => {
+//     console.log(dbUser);
+//   })
+//   .catch(({ message }) => {
+//     console.log(message);
+//   });
 
 // db.StoryTemplates.create({story: "this is a test story", prompts: ["adjective","verb"] })
 //     .then(({ _id }) => db.Users.findOneAndUpdate({userid: "jtest@hotmail.com"}, { $push: {storytemplates: _id } }, { new: true }))
