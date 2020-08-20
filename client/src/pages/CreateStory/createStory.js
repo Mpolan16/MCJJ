@@ -22,23 +22,23 @@ function Create(props) {
 
     useEffect(() => {
 
-        // console.log(props);
+         //console.log(props);
         // console.log("Category",props.location.state.category)    
         // console.log("Language",props.location.state.language)    
 
-        API.getTemplateById("5f3c63244944b44690617d74").then((res) => {
+        // API.getTemplateById("5f3c63244944b44690617d74").then((res) => {
 
-            setStory({ details: res.data.story, title: res.data.story })
-            setWords(res.data.prompts)
-            setTemplate(res.data.story)
-        });
-
-        // API.getTemplatesByCategoryAndLanguage(props.location.state.cat, props.location.state.lang).then((res) => {
-        //     console.log(res);
-        //     console.log(res.data.prompts);
-        //     setStory({ details: res.data[0].story, title: res.data[0].title })
-        //     setWords(res.data[0].prompts)
+        //     setStory({ details: res.data.story, title: res.data.story })
+        //     setWords(res.data.prompts)
+        //     setTemplate(res.data.story)
         // });
+
+        API.getTemplatesByCategoryAndLanguage(props.location.state.cat[0], props.location.state.lang[0]).then((res) => {
+            console.log(res);
+            console.log(res.data.prompts);
+            setStory({ details: res.data[0].story, title: res.data[0].title })
+            setWords(res.data[0].prompts)
+        });
 
 
     }, []);

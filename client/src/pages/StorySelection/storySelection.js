@@ -1,5 +1,5 @@
 // create a separate page for story selection form (which adds language, or category in future and THEN goes to Create(complete,generate) component)
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
 import ToggleButton from 'react-bootstrap/ToggleButton';
 
 import React, { useState } from "react";
@@ -10,61 +10,33 @@ import {Link} from "react-router-dom";
 function StorySelection() {
     const [lang, setLang] = useState();
     const [cat, setCat] = useState();
-    const [checked, setChecked] = useState(false);
-    const [radioValue, setRadioValue] = useState("1");
     
     
-    function setLanguage() {
-        if (document.getElementById("eng").checked){
-            setLang("English");
-        } else {
-            setLang("Spanish");
-        }
+    function setLanguage(selectedValue) {
+        setLang(selectedValue)   
     }
 
-    function setCategory() {
-        if (document.getElementById("funny").checked){
-            setCat("Funny");
-        } else if (document.getElementById("scary").checked) {
-            setCat("Scary");
-        } else if (document.getElementById("cuentos").checked){
-            setCat("Cuentos");
-        }
+    function setCategory(selectedValue) {
+        setCat(selectedValue)
     }
+
+    
 
 
     return(
         <div>
             <h3>Select language:</h3>
-            <ButtonGroup toggle3>
-        
-                <label className="btn btn-secondary">
-                    <ToggleButton onClick = {setLanguage} type="radio" name="language" id="eng" value = "English" /> English
-                </label>
-                <label className="btn btn-secondary">
-                    <ToggleButton onClick = {setLanguage} type="radio" name="language" id="spanish" value = "Spanish" /> Spanish
-                </label>
 
-            </ButtonGroup>
-
-            <br></br>
-        
-    
-            <h3>Select Category:</h3>
-            <ButtonGroup toggle2>
-            
-                <label className="btn btn-secondary">
-                    <ToggleButton onClick = {setCategory} type="radio" name="category" id="funny" value = "Funny"  /> Funny Story
-                </label>
-                <label className="btn btn-secondary">
-                    <ToggleButton onClick = {setCategory} type="radio" name="category" id="scary" value = "Scary" /> Scary Story
-                </label>
-                <label style={{ display: lang === "Spanish" ? "inline" : "none" }} className="btn btn-secondary">
-                    <ToggleButton onClick = {setCategory}  type="radio" name="category" id="cuentos" value = "Cuentos" /> Cuentos
-                </label>
-            </ButtonGroup>
-           
-            <br></br>
+            <ToggleButtonGroup type="checkbox" name = "language" value = {lang} onChange = {setLanguage}>
+                <ToggleButton value={"English"}>English</ToggleButton>
+                <ToggleButton value={"Spanish"}>Spanish</ToggleButton>
+            </ToggleButtonGroup>
+            <br />
+            <ToggleButtonGroup type="checkbox" name = "category" value = {cat} onChange = {setCategory} >
+                <ToggleButton value={"Funny"}>Funny</ToggleButton>
+                <ToggleButton value={"Scary"}>Scary</ToggleButton>
+                <ToggleButton value={"Cuentos"}>Cuentos</ToggleButton>
+            </ToggleButtonGroup>
            
             <Link 
             to={{
