@@ -2,6 +2,7 @@
 import app from '../../../../node_modules/firebase/app';
 import '../../../../node_modules/firebase/auth';
 import '../../../../node_modules/firebase/database';
+import API from "../../utils/API";
  
 const config = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -24,7 +25,19 @@ class Firebase {
     // *** Auth API ***
  
     doCreateUserWithEmailAndPassword = (email, password) =>
-    this.auth.createUserWithEmailAndPassword(email, password);
+    this.auth.createUserWithEmailAndPassword(email, password).then(function(createdUser) {
+      //console.log(createdUser.user.email)
+      API.insertUser({
+        userid: createdUser.user.email
+      })
+      .then(res => {       
+        console.log(res)
+        if (res.data.status === "error") {
+            throw new Error(res.data.message);
+        }   
+      })
+      .catch(err => console.log(err)); 
+    });
 
     doSignInWithEmailAndPassword = (email, password) =>
     this.auth.signInWithEmailAndPassword(email, password);
