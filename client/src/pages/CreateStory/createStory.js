@@ -63,12 +63,12 @@ function Create(props) {
         for (let i = 0; i < words.length; i++) {
             userStory = userStory.replace("___", userValues[i] || "blank");
 
-            const placeholder = "(" + i + ")___";
+            const placeholder = i + "___";
             styledStory = styledStory.replace("___", placeholder)
             if (!userValues[i]) {
                 userValues[i] = "blank"
             }
-            styledStory = styledStory.split(placeholder).join("<button class='inputWords'>" + userValues[i] + "</button>");
+            styledStory = styledStory.split(placeholder).join("<button class='inputWord'>" + userValues[i] + "</button>");
         }
 
         setTemplate(styledStory);
@@ -94,10 +94,8 @@ function Create(props) {
                         styledStory={styledTemplate}
 
                     />
-
                 )
             }
-
 
         </div>
 
