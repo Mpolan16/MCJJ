@@ -17,21 +17,19 @@ const Nav = () => (
   </div>
 );
 
-
+ 
 const NavigationAuth = () => (
   <ul>
-     <h1 id = "title">Name Goes Here</h1>
-      <Link to={ROUTES.LANDING}> MadLibs</Link>
-    <li>
-      <Link to={ROUTES.LANDING}>Landing</Link>
-    </li>
+    <Link to = {ROUTES.HOME}><h1 id = "title">Name Goes Here</h1></Link> 
+     
+      
     <li>
       <Link to={ROUTES.HOME}>Home</Link>
     </li>
     <li>
       <Link to={ROUTES.ACCOUNT}>Account</Link>
     </li>
-    <li>
+    <li> 
       <Link to={ROUTES.ADMIN}>Admin</Link>
     </li>
 

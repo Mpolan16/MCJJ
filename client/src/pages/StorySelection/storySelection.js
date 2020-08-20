@@ -13,7 +13,11 @@ function StorySelection() {
     
     
     function setLanguage(selectedValue) {
-        setLang(selectedValue)   
+        setLang(selectedValue) 
+        if (selectedValue === "Spanish"){
+            const cuentosBtn = document.getElementById("cuentosBtn");
+            cuentosBtn.disabled = true;
+        }  
     }
 
     function setCategory(selectedValue) {
@@ -28,14 +32,14 @@ function StorySelection() {
             <h3>Select language:</h3>
 
             <ToggleButtonGroup type="checkbox" name = "language" value = {lang} onChange = {setLanguage}>
-                <ToggleButton value={"English"}>English</ToggleButton>
-                <ToggleButton value={"Spanish"}>Spanish</ToggleButton>
+                <ToggleButton className = "btn" value={"English"}>English</ToggleButton>
+                <ToggleButton className = "btn" value={"Spanish"}>Spanish</ToggleButton>
             </ToggleButtonGroup>
             <br />
             <ToggleButtonGroup type="checkbox" name = "category" value = {cat} onChange = {setCategory} >
-                <ToggleButton value={"Funny"}>Funny</ToggleButton>
-                <ToggleButton value={"Scary"}>Scary</ToggleButton>
-                <ToggleButton value={"Cuentos"}>Cuentos</ToggleButton>
+                <ToggleButton className = "btn" value={"Funny"}>Funny</ToggleButton>
+                <ToggleButton className = "btn" value={"Scary"}>Scary</ToggleButton>
+                <ToggleButton className = "btn" id = "cuentosBtn" disabled value={"Cuentos"}>Cuentos</ToggleButton>
             </ToggleButtonGroup>
            
             <Link 
