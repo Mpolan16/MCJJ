@@ -1,21 +1,15 @@
 import React, { Component } from "react";
-import Translator from "./translate.js"
+// import Translator from "./translate.js"
 import '../pages/CreateStory/createStory.css';
 // import { translateAliases } from "../../../models/users";
 let synth = window.speechSynthesis;
 let voices = [];
-
-
-
-
 
 class SpeechContainer extends Component {
     state = {
         pitch: 1,
         rate: 1,
     }
-
-
 
     componentDidMount = () => {
         window.addEventListener('beforeunload', this.componentCleanup);
@@ -24,7 +18,7 @@ class SpeechContainer extends Component {
             synth.onvoiceschanged = this.getAccents;
         };
 
-        let inputWords = document.querySelectorAll(".inputWords");
+        let inputWords = document.querySelectorAll(".inputWord");
         for (let i = 0; i < inputWords.length; i++) {
             inputWords[i].addEventListener("click", () => this.speakWord(inputWords[i].textContent));
         }
@@ -108,11 +102,11 @@ class SpeechContainer extends Component {
     };
 
     speakWord = (clickedWord) => {
+        if (synth.speaking) return;
         const speakWord = new SpeechSynthesisUtterance(clickedWord);
         synth.speak(speakWord);
 
     }
-
 
     changeRate = (e) => {
         this.setState({ rate: e.target.value })
@@ -134,36 +128,39 @@ class SpeechContainer extends Component {
         synth.pause();
     }
 
-
-
-
-
     render() {
 
         return (
             <div className="">
                 <div className="returnedStory" dangerouslySetInnerHTML={{ __html: this.props.styledStory }} />
-                <button className="read-btns">New Story</button>
-                <button onClick={() => synth.cancel()} className="read-btns">Stop</button>
-                <button onClick={() => this.Pause()} className="read-btns">Pause/Resume</button>
-                <button onClick={() => this.Speak(this.props.story, voices)} className="read-btns">Read</button>
 
-                <div className="slider-div">
-                    <label className="slider-label" htmlFor="rate">Rate</label>
-                    <div id="rate-value" className="badge" htmlFor="rate">{this.state.rate}</div>
-                    <input onChange={this.changeRate} value={this.state.value} className="slider" type="range" id="rate" min="0" max="2" defaultValue="1" step="0.1"></input>
-                </div>
+                <section className="row d-flex justify-content-center">
+                    <div className="col-sm-5">
+                        <button className="read-btns" id="new-story-btn">New Story</button>
+                        <button onClick={() => synth.cancel()} className="read-btns">Stop</button>
+                        <button onClick={() => this.Pause()} className="read-btns">Pause/Resume</button>
+                        <button onClick={() => this.Speak(this.props.story, voices)} className="read-btns">Read</button>
+                    </div>
+                    <div className="form-group col-sm-4">
+                        <select id="voice-select" className="form-control" style={{ width: "500px" }}></select>
+                    </div>
+                    <button className="btn"></button>
+                </section>
 
-                <div className="slider-div">
-                    <label className="slider-label" htmlFor="pitch">Pitch</label>
-                    <div id="pitch-value" className="badge" htmlFor="pitch">{this.state.pitch}</div>
-                    <input onChange={this.changePitch} value={this.state.value} className="slider" type="range" id="pitch" min="0" max="2" defaultValue="1" step="0.1"></input>
-                </div>
+                <section className="row d-flex justify-content-center">
+                    <div className="slider-div col-xl-4">
+                        <label className="slider-label" htmlFor="rate">Rate</label>
+                        <div id="rate-value" className="badge" htmlFor="rate">{this.state.rate}</div>
+                        <input onChange={this.changeRate} value={this.state.value} className="slider" type="range" id="rate" min="0" max="2" defaultValue="1" step="0.1"></input>
+                    </div>
 
-                <div className="form-group">
-                    <select id="voice-select" className="form-control" style={{ width: "500px" }}></select>
-                </div>
-                <button className="btn"></button>
+                    <div className="slider-div col-xl-4">
+                        <label className="slider-label" htmlFor="pitch">Pitch</label>
+                        <div id="pitch-value" className="badge" htmlFor="pitch">{this.state.pitch}</div>
+                        <input onChange={this.changePitch} value={this.state.value} className="slider" type="range" id="pitch" min="0" max="2" defaultValue="1" step="0.1"></input>
+                    </div>
+                </section>
+
             </div>
         );
     }
