@@ -1,0 +1,36 @@
+img {
+    margin: 10px auto 10px auto !important;  
+  }
+
+.newStoriesBtn{
+    color:  rgb(250, 66, 143) !important;
+    position: relative;
+    display: inline-block;
+    align-items: center;
+    width: 150px;
+    padding: 0 !important;
+    border: 0px !important;
+    border-radius: 10px !important;  
+  }
+
+  .btnImage {
+    width: 150px;
+    position: relative;
+    display: inline-block;
+    align-items: center;
+    margin: 0 !important;
+    border-radius: 10px;
+  }
+
+  .btnText{
+    position: absolute;
+    z-index: 999;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 40%; /* Adjust this value to move the positioned div up and down */
+    text-align: center;
+    width: 150px;
+   
+  
+  }

@@ -1,0 +1,11 @@
+.btns {
+    color:rgb(250, 66, 143) !important;
+    font-size: 28px;
+    font-weight: 700;
+    width: 300px;
+    margin: 8px;
+    border-width: 5px;
+    border-color: rgb(0, 9, 128) !important;
+    background-color:  rgb(0, 9, 128) !important;
+    text-align: center; 
+}
