@@ -15,8 +15,8 @@ function Create(props) {
     const [userValues, setUserValues] = useState({});
     const [story, setStory] = useState({})
     const [userStory, setUserStory] = useState();
-
     const [styledTemplate, setTemplate] = useState();
+    const [newStory, setNewStory] = useState(0);
 
 
 
@@ -34,14 +34,24 @@ function Create(props) {
         // });
 
         API.getTemplatesByCategoryAndLanguage(props.location.state.cat[0], props.location.state.lang[0]).then((res) => {
-            console.log(res);
-            console.log(res.data.prompts);
-            setStory({ details: res.data[0].story, title: res.data[0].title })
-            setWords(res.data[0].prompts)
+        //API.getTemplatesByCategoryAndLanguage('Funny', 'English').then((res) => {            
+            const nbrStories = res.data.length;
+            //console.log(nbrStories)
+            const randomStory = Math.floor(Math.random() * nbrStories); 
+            //console.log(res.data[randomStory].story)
+            setStory({ details: res.data[randomStory].story, title: res.data[randomStory].title })
+            setWords(res.data[randomStory].prompts)
         });
 
 
-    }, []);
+    }, [newStory]);
+
+    const onNewStory = (e) => {
+        setNewStory(Math.random())
+        setUserStory(null)
+        setStory(null)
+        setWords(null)
+    }
 
     const onChange = (e) => {
         const value = e.target.value;
@@ -81,7 +91,7 @@ function Create(props) {
                 words && (
                     <>
                         {words.map((element, i) => {
-                            return <input className="word-input" data-index={i} placeholder={element} onChange={onChange} />
+                            return <input className="word-input" data-index={i} key={i} placeholder={element} onChange={onChange} />
                         })}
                         <button onClick={() => onSubmit()} className="submit-btn">SUBMIT</button>
                     </>
@@ -92,6 +102,7 @@ function Create(props) {
                     <SpeechContainer
                         story={userStory}
                         styledStory={styledTemplate}
+                        onNewStory={onNewStory}
 
                     />
                 )

@@ -1,5 +1,67 @@
+
+  
 [
     {
-        
-    }
+        "title": "El Ataque del Zombie",
+        "story": "Un día terrible, el Dr.___, un científico malo, hizo un experimento. Él puso contaminantes tóxicos en el cuerpo de un estudiante muerto, y así creó el primer zombie. El zombie se despertó y salió del laboratorio del Doctor. El zombie ___ y aterrorizó a millones de personas por ___ días. Nadie sabía qué hacer...nadie sino ___. Su ___ fue la primera victima del zombie y por eso él/ella buscaba venganza. ___ siempre llevaba un/a ___ para destruir la criatura horrorosa. Un día, ___ ___ por las calles de su ciudad cuando escuchó un grito. Él/Ella miro hacia atrás y vió el zombie que había matado a su ___! Rápidamente, él/ella agarró el/la ___ y ___ hacia el zombie. Gritó <<___!>> y lo pegó con el/la ___. El zombie ___. Antes de morir, el zombie dijo, <<___ ___ >>. ___ se sentía ___.",
+        "prompts": ["last name", "preterite verb él/ella form", "number", "name of a person", "noun that refers to a person", "name of a person", "singular noun", "name of a person", "imperfect verb, él/ella form", "noun that refers to a person", "singular noun", "preterite verb, él/ella form", "definite article + noun", "singular noun", "preterite verb, él/ella form", "plural noun", "present tense verb, *they form", "name of a person", "emotion"],
+        "category": "Scary",
+        "language": "Spanish"
+      },
+      {
+        "title": "Vacations",
+        "story": "A vacation is when you take a trip to some ___ place with your ___ family. Usually you go to some place that is near a/an ___. A good vacation place is one where you can ride ___ or play ___ or go hunting for ___. I like to spend my time ___ or ___.",
+        "prompts": ["adjective", "adjective", "noun", "animal-plural", "plural noun", "game", "verb ending in -ING", "verb ending in -ING"],
+        "category": "Funny",
+        "language": "English"
+      },
+      {
+        "title": "Holiday Baking",
+        "story": "Every year, we make ___ for the holidays. ___ has been a tradition since I was a ___ kid! ___ used to make most of the recipe back then, but I would always help ___ the ___.  Now that I am ___, I make ___ on my own. Don't forget to set the oven to ___ degrees!",
+        "prompts": ["food", "verb ending in -ING", "adjective", "family member", "verb", "noun", "adjective", "noun", "number"],
+        "category": "Funny",
+        "language": "English"
+      },  
+      {
+        "title": "The Final Frontier",
+        "story": "___:, the final frontier. These are the ___ of the starship ___. It's ___ year mission: to ___ strange new ___, to seek out ___ life and new ___, to ___ go where no ___ has gone before.",
+        "prompts": ["place", "plural noun","noun","number","verb","plural noun","adjective","plural noun","adverb","noun"],
+        "category": "Funny",
+        "language": "English"
+      },  
+      {
+        "title": "Little Leagues",
+        "story": "Many future big league baseball ___ are being trained in the little leagues today!  ___ must be between ___ and ___ years old. When a ___ tries out for a little league ___, he is given ___ tests in fielding fast ___ and ___.  If he has a good throwing ___, he will play pitcher or catcher.  If not, he will ___ in the ___ field.",
+        "prompts": ["plural noun","plural noun","age","age","noun","noun","adjective","plural noun","verb ending in -ING","part of the body","verb","adjective"],
+        "category": "Funny",
+        "language": "English"
+      },  
+      {
+        "title": "A Forgotten Asylum",
+        "story": "Deep in the Forest of ___ lies the ___ castle of ___. All the people in the city are happy as they ___ ___ their breakfasts. All day long people go about making their ___. Once in a while someone will ___ and all of the sudden ___ starts falling from the sky. One day a/an ___ comes to town. Everyone pays $___ for a/an ___ and now they will be able to ___ enough to create energy enough so the whole town has ___ falling from the sky for days",
+        "prompts": ["name", "adjective", "name", "adjective", "verb", "noun-thing", "verb", "noun-thing", "occupation ending in -ist", "number", "noun-thing", "verb", "noun-thing"],
+        "category": "Scary",
+        "language": "English"
+      },
+      {
+        "title": "A Look Into Your Future",
+        "story": "You tell your parents goodnight and the next morning when you wake up you it is the year ___. Life is not what you expected. If you ___ too loudly, you will be put in isolation. This room has ___ oozing from the walls. No light or windows and you are only fed ___. Otherwise you must spend your day making ___ to make the Emperor ___ happy. You join the ___ warriors to try and take over the throne. Sadly, the ___ weapons you had were easily destroyed by the Emperor's warriors. You wonder home to make new plans. You fall asleep on your desk and awake the next morning in your bedroom and your mother is calling you down for breakfast.  ",
+        "prompts": ["year in the future", "verb", "noun-thing", "plant", "noun-thing", "name", "name", "adjective"],
+        "category": "Scary",
+        "language": "English"
+      },
+      {
+        "title": "El camello",
+        "story": "Había una vez un principe llamado Principe ___ quieria comprar el camello mas rapido del mundo. El dueño del camello, Don ___ era muy pobre pero no quería venderlo. El principe le ofreció ___ billones de dolares y el dueño no podía decir que no. Ya que tenía su camello, el Principe no quería escuchar  TODAS las instrucciones de como manejarlo. El principe Toció una vez y el camello caminaba, toció dos veces y el camello corría y cuando decía <<ahhhh>> el camello volaba. El camello ___ sobre las calles y ___ sobre el agua y el prinipe estaba feliz de la vida con su camello. De repente el principe se dió cuenta que se estaba acercando a un precipicio y le grito al camello <<___>> pero el camello seguía corriendo rapido. El prinicpe no sabía que hacer y comenzó a orar con los ojos cerrados y cuando termino dijo <<AMEN>>. Abrió los ojos y el camello paró a pundo de caerce del precipicio. El principe estaba tan aliviado que dijo <<ahhhhh>> y el camello ___ hacia el precipicio ",
+        "prompts": ["name of a man", "name of another man", "a number from one to nine", "verb", "verb", "word for stop", "verb"],
+        "category": "Cuentos",
+        "language": "Spanish"
+      },
+      {
+        "title": "Aventuras de Élida",
+        "story": "Un día Élida no queria ir a la escuela y en ves de montarse el autobus decidió ir a/al ___ con su amiga ___. Ellas hablaron de ___, comieron mucho ___ y ___ en el ___. Cuando llegaron a la casa se dieron cuenta que ese era el día que iva a visitar ___. Adicionalmente, sus madres les dieron un castigo de no salir por ___días. Élida nunca repidió el mismo error.",
+        "prompts": ["a very fun place to go", "girls name", "funny topic to talk about", "food", "verb", "noun-place", "most popular (alive) person in the world", "a number bigger than 0"],
+        "category": "Funny",
+        "language": "Spanish"
+      }
 ]
