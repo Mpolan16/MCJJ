@@ -7,6 +7,7 @@ import TwoButtonDropdownModal from "../../components/TwoButtonDropdownModal";
 import OneButtonSimpleModal from "../../components/OneButtonSimpleModal";
 import PartsOfSpeechList from "../../components/PartsOfSpeechList"
 import CreateTemplateSidebar from "../../components/CreateTemplateSidebar"
+import { Container, Row, Col } from "react-bootstrap";
 
 function CreateTemplate() { 
   
@@ -419,82 +420,85 @@ function CreateTemplate() {
   };
 
   return (
-    <div className="drag-container">
-      <div className="row">
-        <div className="col-md-2">
-        </div>
-        <div className="col-md-4">
+    <Container fluid>
+      <div className="drag-container">
+      <Row>
+        <Col lg={2}>
+        </Col>
+        <Col lg={4}>
+
           <form onSubmit={handleSubmit(saveTemplate)}>
-            <label className="mt-1 mr-1" htmlFor="title">Title:</label>
-            <input name="title" 
-              aria-invalid={errors.title ? "true" : "false"}              
-              ref={register({ required: true })}/>
-              { errors.title && (
-                  <>
-                    <br></br>
-                    <span class="noentry" role="alert">
-                      The title is required!
-                    </span>
-                  </>
-                )
-              }
-            <br></br>
-            <label className="mt-1 mr-1" htmlFor="category">Category:</label>
-            <select className="mt-1" ref={register} name="category">
-              <option value="Funny">Funny</option>
-              <option value="Scary">Scary</option>
-              <option value="Fables">Fables</option>              
-              <option value="Cuentos">Cuentos</option>              
-            </select>
-            <br></br>        
-            <label className="mt-1 mr-1" htmlFor="language">Language:</label>
-            <select className="mt-1" ref={register} name="language">
-              <option value="English">English</option>
-              <option value="Spanish">Spanish</option>
-            </select>  
-            <br></br>     
-            <label htmlFor="text">Story:</label>    
-            <textarea className="droppable"
-                id="templateEntry"
-                onDragOver={onDragOver}
-                onDrop={onDrop}              
-                onChange={handleInputChange}
-                onClick={handleTextAreaClick}
-                onKeyUp={handleArrowMoves}
-                value={template.text}
-                name="text"
-                aria-invalid={errors.text ? "true" : "false"}
-                ref={register({ required: true })}>
-            </textarea>
-            { errors.text && (
-                  <>
-                    <br></br>
-                    <span className="noentry" role="alert">
-                      A story is required!
-                    </span>
-                  </>
-                )
-              }          
-            <br></br>            
-            {/* <input className="btn btn-primary mb-3" type="submit"/> */}
+            <div className="form-group">
+              <label htmlFor="title">Title:</label>
+              <input className = "form-control" name="title" 
+                aria-invalid={errors.title ? "true" : "false"}              
+                ref={register({ required: true })}/>
+                { errors.title && (
+                    <>
+                      <span class="noentry" role="alert">
+                        The title is required!
+                      </span>
+                    </>
+                  )
+                }
+            </div>
+            <div className="form-group">
+              <label htmlFor="category">Category:</label>
+              <select className="form-control" ref={register} name="category">
+                <option value="Funny">Funny</option>
+                <option value="Scary">Scary</option>
+                <option value="Fables">Fables</option>              
+                <option value="Cuentos">Cuentos</option>              
+              </select>
+            </div>
+            <div className="form-group">            
+              <label htmlFor="language">Language:</label>
+              <select className="form-control" ref={register} name="language">
+                <option value="English">English</option>
+                <option value="Spanish">Spanish</option>
+              </select>  
+            </div>
+            <div className="form-group">             
+              <label htmlFor="text">Story:</label>    
+              <textarea className="droppable form-control"
+                  id="templateEntry"
+                  onDragOver={onDragOver}
+                  onDrop={onDrop}              
+                  onChange={handleInputChange}
+                  onClick={handleTextAreaClick}
+                  onKeyUp={handleArrowMoves}
+                  value={template.text}
+                  name="text"
+                  aria-invalid={errors.text ? "true" : "false"}
+                  ref={register({ required: true })}>
+              </textarea>
+              { errors.text && (
+                    <>
+                      <span className="noentry" role="alert">
+                        A story is required!
+                      </span>
+                    </>
+                  )
+                }
+            </div>          
             <button id="btnSave" className="btn btn-primary mt-2">
               Save Template
             </button>
           </form>
-        </div>    
-        <div className="col-md-2">
+        </Col>    
+        <Col lg={2}>
           <PartsOfSpeechList
             partsOfSpeech={partsOfSpeech}
             onDragStart={onDragStart}
             onDoubleClick={onDoubleClick}/>
-        </div> 
-        <div className="col-md-2">
+        </Col> 
+        <Col lg={2}>
           <CreateTemplateSidebar 
             newTemplate={prepareNewTemplate}
             updateTemplate={handleShowTemplateModal}
             deleteTemplate={handleShowTemplateModal}/>
-        </div>        
-      </div>       
+        </Col>        
+      </Row>      
 
       <TwoButtonDropdownModal
         title={buttonModalState.title}
@@ -514,8 +518,9 @@ function CreateTemplate() {
         onHide={handleCloseSuccessModal}            
         body={successModalState.body}
         onClickClose={handleCloseSuccessModal}            
-        closeButtonText={buttonModalState.closeBtnText}/>          
+        closeButtonText={buttonModalState.closeBtnText}/>       
     </div>    
+    </Container>
   );
 }
 

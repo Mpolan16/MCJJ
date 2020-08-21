@@ -136,7 +136,7 @@ class SpeechContainer extends Component {
 
                 <section className="row d-flex justify-content-center">
                     <div className="col-sm-5">
-                        <button className="read-btns" id="new-story-btn">New Story</button>
+                        <button onClick={this.props.onNewStory} className="read-btns" id="new-story-btn">New Story</button>
                         <button onClick={() => synth.cancel()} className="read-btns">Stop</button>
                         <button onClick={() => this.Pause()} className="read-btns">Pause/Resume</button>
                         <button onClick={() => this.Speak(this.props.story, voices)} className="read-btns">Read</button>

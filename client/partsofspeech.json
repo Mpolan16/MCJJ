@@ -1,0 +1,101 @@
+[
+    {
+      "partOfSpeech": "noun"
+    },
+    {
+      "partOfSpeech": "adjective"
+    },
+    {
+      "partOfSpeech": "adverb"
+    },
+    {
+      "partOfSpeech": "verb"
+    },
+    {
+      "partOfSpeech": "name of a city"
+    },
+    {
+      "partOfSpeech": "city"
+    },      
+    {
+      "partOfSpeech": "plural noun"
+    },        
+    {
+      "partOfSpeech": "part of the body"
+    },      
+    {
+      "partOfSpeech": "place"
+    },        
+    {
+      "partOfSpeech": "number"
+    },        
+    {
+      "partOfSpeech": "first name male"
+    },      
+    {
+      "partOfSpeech": "first name female"
+    },        
+    {
+      "partOfSpeech": "article of clothing"
+    },        
+    {
+      "partOfSpeech": "country"
+    },      
+    {
+      "partOfSpeech": "celebrity"
+    },        
+    {
+      "partOfSpeech": "age"
+    },        
+    {
+      "partOfSpeech": "liquid"
+    },        
+    {
+      "partOfSpeech": "emotion"
+    },   
+    {
+      "partOfSpeech": "food"
+    },             
+    {
+      "partOfSpeech": "verb ending In -ING"
+    },
+    {
+      "partOfSpeech": "occupation"
+    },
+    {
+      "partOfSpeech": "animal"
+    },  
+    {
+      "partOfSpeech": "year in the future"
+    }, 
+    {
+      "partOfSpeech": "noun-thing"
+    },      
+    {
+      "partOfSpeech": "noun-place"
+    },  
+    {
+      "partOfSpeech": "fun place to go"
+    },   
+    {
+      "partOfSpeech": "number from 1 to 9"
+    },
+    {
+      "partOfSpeech": "occupation ending in -IST"
+    },   
+    {
+      "partOfSpeech": "family member"
+    },   
+    {
+      "partOfSpeech": "animal-plural"
+    },
+    {
+      "partOfSpeech": "occupation-plural"
+    },   
+    {
+      "partOfSpeech": "verb-past tense"
+    },
+    {
+      "partOfSpeech": "last name"
+    }      
+  ]
