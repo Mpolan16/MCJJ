@@ -1,7 +1,7 @@
 // create a separate page for story selection form (which adds language, or category in future and THEN goes to Create(complete,generate) component)
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
 import ToggleButton from 'react-bootstrap/ToggleButton';
-
+import "./storySelection.css";
 import React, { useState } from "react";
 import {Link} from "react-router-dom";
 // import stories from "../utils/stories.json";
@@ -32,14 +32,14 @@ function StorySelection() {
             <h3>Select language:</h3>
 
             <ToggleButtonGroup type="checkbox" name = "language" value = {lang} onChange = {setLanguage}>
-                <ToggleButton className = "btn" value={"English"}>English</ToggleButton>
-                <ToggleButton className = "btn" value={"Spanish"}>Spanish</ToggleButton>
+                <ToggleButton className = "btns" value={"English"}>English</ToggleButton>
+                <ToggleButton className = "btns" value={"Spanish"}>Spanish</ToggleButton>
             </ToggleButtonGroup>
             <br />
             <ToggleButtonGroup type="checkbox" name = "category" value = {cat} onChange = {setCategory} >
-                <ToggleButton className = "btn" value={"Funny"}>Funny</ToggleButton>
-                <ToggleButton className = "btn" value={"Scary"}>Scary</ToggleButton>
-                <ToggleButton className = "btn" id = "cuentosBtn" disabled value={"Cuentos"}>Cuentos</ToggleButton>
+                <ToggleButton className = "btns" value={"Funny"}>Funny</ToggleButton>
+                <ToggleButton className = "btns" value={"Scary"}>Scary</ToggleButton>
+                <ToggleButton className = "btns" id = "cuentosBtn" disabled value={"Cuentos"}>Cuentos</ToggleButton>
             </ToggleButtonGroup>
            
             <Link 

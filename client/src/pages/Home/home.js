@@ -5,7 +5,11 @@ import "./home.css";
 import Image from 'react-bootstrap/Image';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import Button from 'react-bootstrap/Button';
+//import Column from 'react-bootstrap/Column';
+import NewStory from "../../components/NewStoryBtn/newStory";
+import WriteNew from "../../components/WriteNewStoryBtn/writeNew";
+
+
 
 function Home() {
     return(
@@ -13,17 +17,13 @@ function Home() {
             
             <Row>
                 <Link to = "/storySelection">
-                    <Button className = "newStoriesBtn"><Image className = "btnImage"  src = "../../Assets/newStory.png"/>
-                    <p className = "btnText" >Click here to select options for your story</p>
-                    </Button>
+                    <NewStory />
                 </Link>
 
                 <Image src = "../../Assets/hero.png" fluid />
 
                 <Link to = "/createTemplate">
-                    <Button className = "newStoriesBtn"><Image className = "btnImage"  src = "../../Assets/newTemplate.png"/>
-                    <p className = "btnText">Click here to create a template</p>
-                    </Button>
+                    <WriteNew />
                 </Link>
             </Row>
      
