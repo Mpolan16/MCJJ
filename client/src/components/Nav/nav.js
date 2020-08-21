@@ -20,7 +20,7 @@ const Nav = () => (
  
 const NavigationAuth = () => (
   <ul>
-    <Link to = {ROUTES.HOME}><h1 id = "title">Name Goes Here</h1></Link> 
+    <Link to = {ROUTES.HOME}><h1 id = "title">Fumbled Fable</h1></Link> 
      
       
     <li>
