@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import Translator from "./translate.js"
 import '../pages/CreateStory/createStory.css';
 // import { translateAliases } from "../../../models/users";
 let synth = window.speechSynthesis;
@@ -9,18 +8,20 @@ class SpeechContainer extends Component {
     state = {
         pitch: 1,
         rate: 1,
+        pausableAccents: ["Microsoft David Desktop - English (United States)", "Microsoft Zira Desktop - English (United States)"],
     }
 
     componentDidMount = () => {
         window.addEventListener('beforeunload', this.componentCleanup);
+
         this.getAccents();
-        if (synth.onvoiceschanged !== undefined) {
-            synth.onvoiceschanged = this.getAccents;
-        };
+        // if (synth.onvoiceschanged !== undefined) {
+        //     synth.onvoiceschanged = this.getAccents;
+        // };
 
         let inputWords = document.querySelectorAll(".inputWord");
         for (let i = 0; i < inputWords.length; i++) {
-            inputWords[i].addEventListener("click", () => this.speakWord(inputWords[i].textContent));
+            inputWords[i].addEventListener("click", () => this.Speak(inputWords[i].textContent, voices));
         }
 
     }
@@ -36,6 +37,7 @@ class SpeechContainer extends Component {
 
     getAccents = () => {
         const voiceSelect = document.querySelector("#voice-select");
+        // voiceSelect.innerHTML = "";
 
         voices = synth.getVoices();
         voices.forEach(voice => {
@@ -44,17 +46,14 @@ class SpeechContainer extends Component {
 
             option.setAttribute("data-lang", voice.lang);
             option.setAttribute("data-name", voice.name);
+            option.className = " accent-option";
 
-            // if (option.getAttribute("data-lang") === "en-US" || option.getAttribute("data-lang") === "en-GB" || option.getAttribute("data-lang") === "es-US") {
-            //     voiceSelect.appendChild(option);
-            // }
             voiceSelect.appendChild(option);
         })
 
     };
 
     Speak = (userStory, voices) => {
-
 
         console.log(this.props.styledStory)
 
@@ -99,14 +98,10 @@ class SpeechContainer extends Component {
             if (!synth.speaking || synth.paused) clearInterval(resume);
             else synth.resume();
         }, 4000);
+
+        voiceSelect.value = selectedVoice;
+
     };
-
-    speakWord = (clickedWord) => {
-        if (synth.speaking) return;
-        const speakWord = new SpeechSynthesisUtterance(clickedWord);
-        synth.speak(speakWord);
-
-    }
 
     changeRate = (e) => {
         this.setState({ rate: e.target.value })
@@ -123,9 +118,18 @@ class SpeechContainer extends Component {
                 if (!synth.speaking || synth.paused) clearInterval(resume);
                 else synth.resume();
             }, 4000);
+        } else {
+            console.log("paused")
+            synth.pause();
         }
-        console.log("paused")
-        synth.pause();
+    }
+
+    changedAccents = (e) => {
+        if (!this.state.pausableAccents.includes(e.target.value)) {
+            document.getElementById("pause-btn").style.opacity = "0.2";
+        }
+        else { document.getElementById("pause-btn").style.opacity = "1"; }
+
     }
 
     render() {
@@ -137,22 +141,26 @@ class SpeechContainer extends Component {
                 <section className="row voiceBtns d-flex justify-content-center" >
                     <div className="col-md-6">
                         <button onClick={() => synth.cancel()} className="read-btns">Stop</button>
-                        <button onClick={() => this.Pause()} className="read-btns">Pause/Resume</button>
+                        <button onClick={() => this.Pause()} id="pause-btn" className="read-btns">Pause/Resume</button>
                         <button onClick={() => this.Speak(this.props.story, voices)} className="read-btns">Read</button>
                     </div>
+
                     <div className="form-group col-sm-3">
                         <select id="voice-select" className="form-control"></select>
                     </div>
                 </section>
 
                 <section className="row d-flex justify-content-center">
+
                     <div className="slider-div col-xl-5">
                         <label className="slider-label" htmlFor="rate">Rate</label>
                         <div id="rate-value" className="badge" htmlFor="rate">{this.state.rate}</div>
                         <input onChange={this.changeRate} value={this.state.value} className="slider" type="range" id="rate" min="0" max="2" defaultValue="1" step="0.1"></input>
                     </div>
 
+
                     <div className="slider-div col-xl-5">
+
                         <label className="slider-label" htmlFor="pitch">Pitch</label>
                         <div id="pitch-value" className="badge" htmlFor="pitch">{this.state.pitch}</div>
                         <input onChange={this.changePitch} value={this.state.value} className="slider" type="range" id="pitch" min="0" max="2" defaultValue="1" step="0.1"></input>
