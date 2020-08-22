@@ -22,22 +22,22 @@ function Create(props) {
         // console.log("Category",props.location.state.category)    
         // console.log("Language",props.location.state.language)    
 
-        API.getTemplateById("5f3f11ff535fed30f454d6a3").then((res) => {
+        // API.getTemplateById("5f3f11ff535fed30f454d6a3").then((res) => {
 
-            setStory({ details: res.data.story, title: res.data.story })
-            setWords(res.data.prompts)
-            setTemplate(res.data.story)
-        });
-
-        // API.getTemplatesByCategoryAndLanguage(props.location.state.cat[0], props.location.state.lang[0]).then((res) => {
-        // //API.getTemplatesByCategoryAndLanguage('Funny', 'English').then((res) => {            
-        //     const nbrStories = res.data.length;
-        //     //console.log(nbrStories)
-        //     const randomStory = Math.floor(Math.random() * nbrStories); 
-        //     //console.log(res.data[randomStory].story)
-        //     setStory({ details: res.data[randomStory].story, title: res.data[randomStory].title })
-        //     setWords(res.data[randomStory].prompts)
+        //     setStory({ details: res.data.story, title: res.data.story })
+        //     setWords(res.data.prompts)
+        //     setTemplate(res.data.story)
         // });
+
+        API.getTemplatesByCategoryAndLanguage(props.location.state.cat[0], props.location.state.lang[0]).then((res) => {
+        //API.getTemplatesByCategoryAndLanguage('Funny', 'English').then((res) => {            
+            const nbrStories = res.data.length;
+            //console.log(nbrStories)
+            const randomStory = Math.floor(Math.random() * nbrStories); 
+            //console.log(res.data[randomStory].story)
+            setStory({ details: res.data[randomStory].story, title: res.data[randomStory].title })
+            setWords(res.data[randomStory].prompts)
+        });
 
 
     }, [newStory]);
