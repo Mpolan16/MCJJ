@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Card from "react-bootstrap/Card"
+import Container from "react-bootstrap/Container";
 import API from "../../utils/API.js";
 import SpeechContainer from "../../components/readStory.js"
 import { withRouter } from "react-router-dom";
@@ -82,7 +83,7 @@ function Create(props) {
     }
 
     return (
-        <div className = "container">
+        <Container>
             <Card id = "wordEntry">
                 <h3>Enter a word for each blank:</h3>
                 {words && (
@@ -102,7 +103,7 @@ function Create(props) {
                     />
             )}
 
-        </div>
+        </Container>
 
     );
 }

@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-
+import React, { Component } from 'react'
+import Container from "react-bootstrap/Container";
 import { withFirebase } from '../Firebase';
  
 class AdminPage extends Component {
@@ -38,12 +38,14 @@ class AdminPage extends Component {
     const { users, loading } = this.state;
 
     return (
-      <div>
-        <h1>Admin</h1>
-        {loading && <div>Loading ...</div>}
- 
-        <UserList users={users} />
-      </div>
+      <Container>
+        <div>
+          <h1>Admin</h1>
+          {loading && <div>Loading ...</div>}
+  
+          <UserList users={users} />
+        </div>
+      </Container>
     );
   }
 }
