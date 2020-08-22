@@ -3,6 +3,7 @@ import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
 import ToggleButton from 'react-bootstrap/ToggleButton';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import Container from 'react-bootstrap/Container';
 import "./storySelection.css";
 import React, { useState } from "react";
 import {Link} from "react-router-dom";
@@ -29,7 +30,7 @@ function StorySelection() {
     
 
     return(
-        <div>
+        <Container>
           <Card>
             <h3>Select Language:</h3>
                 <ToggleButtonGroup type="checkbox" name = "language" value = {lang} onChange = {setLanguage}>
@@ -60,7 +61,7 @@ function StorySelection() {
             </Button> 
         </div>
            
-        </div>
+        </Container>
     );
 }
 

@@ -420,7 +420,7 @@ function CreateTemplate() {
   };
 
   return (
-    <Container fluid>
+    <Container>
       <div className="drag-container">
         <Row>
           <Col lg={2}>
