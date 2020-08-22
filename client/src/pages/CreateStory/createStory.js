@@ -19,7 +19,7 @@ function Create(props) {
 
     useEffect(() => {
 
-        //console.log(props);
+        console.log(props);
         // console.log("Category",props.location.state.category)    
         // console.log("Language",props.location.state.language)    
 
@@ -30,7 +30,7 @@ function Create(props) {
         //     setTemplate(res.data.story)
         // });
 
-        API.getTemplatesByCategoryAndLanguage(props.location.state.cat[0], props.location.state.lang[0]).then((res) => {
+        API.getTemplatesByCategoryAndLanguage(props.location.state.cat, props.location.state.lang).then((res) => {
         //API.getTemplatesByCategoryAndLanguage('Funny', 'English').then((res) => {            
             const nbrStories = res.data.length;
             //console.log(nbrStories)
