@@ -11,39 +11,44 @@ import {Link} from "react-router-dom";
 
 
 function StorySelection() {
-    const [lang, setLang] = useState();
-    const [cat, setCat] = useState();
+    const [lang, setLang] = useState("English");
+    const [cat, setCat] = useState("Funny");
     
-    function setLanguage(selectedValue) {
-        setLang(selectedValue) 
-        console.log(selectedValue);
-        if (selectedValue === "Spanish"){
-
-            const cuentosBtn = document.getElementById("cuentosBtn");
-            cuentosBtn.disabled = true;
-        }  
+    function setEnglish() {
+        setLang("English"); 
     }
 
-    function setCategory(selectedValue) {
-        setCat(selectedValue)
+    function setSpanish() {
+        setLang("Spanish"); 
     }
-    
+
+    function setFunny() {
+        setCat("Funny");
+    }
+
+    function setScary() {
+        setCat("Scary");
+    }
+
+    function setCuentos() {
+        setCat("Cuentos");
+    }
 
     return(
         <Container>
           <Card>
             <h3>Select Language:</h3>
-                <ToggleButtonGroup type="checkbox" name = "language" value = {lang} onChange = {setLanguage}>
-                    <ToggleButton className = "btns" value={"English"}>English</ToggleButton>
-                    <ToggleButton className = "btns" value={"Spanish"}>Spanish</ToggleButton>
+                <ToggleButtonGroup type="checkbox" name = "language" value = {lang} >
+                    <ToggleButton onClick = {setEnglish} className = "btns" value={"English"}>English</ToggleButton>
+                    <ToggleButton onClick = {setSpanish} className = "btns" value={"Spanish"}>Spanish</ToggleButton>
                 </ToggleButtonGroup>
                 <br />
 
             <h3>Select Category:</h3>
-                <ToggleButtonGroup type="checkbox" name = "category" value = {cat} onChange = {setCategory} >
-                    <ToggleButton className = "btns" value={"Funny"}>Funny</ToggleButton>
-                    <ToggleButton className = "btns" value={"Scary"}>Scary</ToggleButton>
-                    <ToggleButton className = "btns" id = "cuentosBtn" disabled value={"Cuentos"}>Cuentos</ToggleButton>
+                <ToggleButtonGroup type="checkbox" name = "category" value = {cat} >
+                    <ToggleButton onClick = {setFunny} className = "btns" value={"Funny"}>Funny</ToggleButton>
+                    <ToggleButton onClick = {setScary} className = "btns" value={"Scary"}>Scary</ToggleButton>
+                    {lang === "Spanish" && <ToggleButton onClick = {setCuentos} className = "btns" id = "cuentosBtn" value={"Cuentos"}>Cuentos</ToggleButton>}
                 </ToggleButtonGroup>
           </Card>
 
