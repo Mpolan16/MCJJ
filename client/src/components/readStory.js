@@ -146,7 +146,7 @@ class SpeechContainer extends Component {
                     </div>
 
                     <div className="form-group col-sm-3">
-                        <select id="voice-select" className="form-control"></select>
+                        <select id="voice-select" className="form-control" onChange={this.changedAccents}></select>
                     </div>
                 </section>
 
@@ -166,12 +166,12 @@ class SpeechContainer extends Component {
                         <input onChange={this.changePitch} value={this.state.value} className="slider" type="range" id="pitch" min="0" max="2" defaultValue="1" step="0.1"></input>
                     </div>
                 </section>
-                <section className="row d-flex justify-content-center">       
-                        <div >
-                            <button onClick={this.props.onNewStory} className="read-btns" id="new-story-btn">New Story</button>
-                        </div>
-                </section> 
-                
+                <section className="row d-flex justify-content-center">
+                    <div >
+                        <button onClick={this.props.onNewStory} className="read-btns" id="new-story-btn">New Story</button>
+                    </div>
+                </section>
+
 
             </div>
         );
