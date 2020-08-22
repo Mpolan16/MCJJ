@@ -135,35 +135,43 @@ class SpeechContainer extends Component {
     render() {
 
         return (
-            <div className="">
-                <div className="returnedStory" dangerouslySetInnerHTML={{ __html: this.props.styledStory }} />
+            <div className="container">
+                <div className="returnedStory " dangerouslySetInnerHTML={{ __html: this.props.styledStory }} />
 
-                <section className="row d-flex justify-content-center">
-                    <div className="col-sm-5">
-                        <button onClick={this.props.onNewStory} className="read-btns" id="new-story-btn">New Story</button>
+                <section className="row voiceBtns d-flex justify-content-center" >
+                    <div className="col-md-6">
                         <button onClick={() => synth.cancel()} className="read-btns">Stop</button>
                         <button onClick={() => this.Pause()} id="pause-btn" className="read-btns">Pause/Resume</button>
                         <button onClick={() => this.Speak(this.props.story, voices)} className="read-btns">Read</button>
                     </div>
-                    <div className="form-group col-sm-4">
-                        <select id="voice-select" className="form-control" style={{ width: "500px" }} onChange={this.changedAccents}></select>
+
+                    <div className="form-group col-sm-3">
+                        <select id="voice-select" className="form-control"></select>
                     </div>
-                    <button className="btn"></button>
                 </section>
 
                 <section className="row d-flex justify-content-center">
-                    <div className="slider-div col-xl-3">
+
+                    <div className="slider-div col-xl-5">
                         <label className="slider-label" htmlFor="rate">Rate</label>
                         <div id="rate-value" className="badge" htmlFor="rate">{this.state.rate}</div>
                         <input onChange={this.changeRate} value={this.state.value} className="slider" type="range" id="rate" min="0" max="2" defaultValue="1" step="0.1"></input>
                     </div>
 
-                    <div className="slider-div col-xl-3">
+
+                    <div className="slider-div col-xl-5">
+
                         <label className="slider-label" htmlFor="pitch">Pitch</label>
                         <div id="pitch-value" className="badge" htmlFor="pitch">{this.state.pitch}</div>
                         <input onChange={this.changePitch} value={this.state.value} className="slider" type="range" id="pitch" min="0" max="2" defaultValue="1" step="0.1"></input>
                     </div>
                 </section>
+                <section className="row d-flex justify-content-center">       
+                        <div >
+                            <button onClick={this.props.onNewStory} className="read-btns" id="new-story-btn">New Story</button>
+                        </div>
+                </section> 
+                
 
             </div>
         );
