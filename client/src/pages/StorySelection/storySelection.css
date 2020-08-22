@@ -1,7 +1,4 @@
 
-
-
-
 .btns {
     color:rgb(250, 66, 143) !important;
     font-size: 28px;
@@ -17,7 +14,7 @@
 
 #createStory {
     margin: 10px auto 10px auto !important;
-    width: 250px !important;
+    width: 316px !important;
     border-color: rgb(241, 223, 78) !important;
     background-color:  rgb(241, 223, 78) !important;
 }
@@ -26,6 +23,7 @@
     padding: 25px;
     margin: 55px auto 15px auto;
     width: 400px;
+    background:rgb(252, 244, 188) !important ;
 }
 
 

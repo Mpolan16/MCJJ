@@ -26,7 +26,7 @@ import { withAuthentication } from './components/Session';
  
 const App = () => (
       <Router basename="/">
-        <div>
+        <div id = "container">
           <Nav />
           <Switch>
             {/* <Route exact path="/favorites/:id" component={FavoritesList} /> */}
