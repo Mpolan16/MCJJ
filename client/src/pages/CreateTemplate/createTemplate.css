@@ -1,5 +1,5 @@
 .form-group {
-    margin: 0 0 6px !important;
+    margin: 0 0 0px !important;
 }
 
 .noentry {
@@ -13,7 +13,7 @@
 }
 
 #templateEntry {
-    min-height: 175px;
+    min-height: 160px;
     color: rgb(0, 9, 128);
     font-size: 20px;
     font-weight: 500;
