@@ -423,9 +423,9 @@ function CreateTemplate() {
     <Container>
       <div className="drag-container">
         <Row>
-          <Col lg={2}>
+          <Col lg={1}>
           </Col>
-          <Col lg={4}>
+          <Col lg={5}>
 
             <form onSubmit={handleSubmit(saveTemplate)}>
               <div className="form-group">
