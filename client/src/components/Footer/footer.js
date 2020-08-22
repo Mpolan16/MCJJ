@@ -3,9 +3,11 @@ import "./footer.css";
 
 function Footer() {
     return(
-        <footer className = "footer">
-            <p>Created by MCJJ Team</p>
-        </footer>
+        <div id = "footer">
+            <footer className = "footer">
+                <p>Created by MCJJ Team</p>
+            </footer>
+        </div>
     );
 }
 

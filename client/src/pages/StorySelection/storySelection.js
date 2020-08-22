@@ -50,18 +50,18 @@ function StorySelection() {
           </Card>
 
            
-
-          <Button className = "btns" id = "createStory">
-            <Link 
-            to={{
-                pathname: '/create',
-                state: {lang, cat}
-                }}
-            >
-                Now enter the missing words
-            </Link>
-          </Button> 
-
+        <div id = "createStory">
+            <Button className = "btns" >
+                <Link 
+                to={{
+                    pathname: '/create',
+                    state: {lang, cat}
+                    }}
+                >
+                    Now enter the missing words
+                </Link>
+            </Button> 
+        </div>
            
         </div>
     );
