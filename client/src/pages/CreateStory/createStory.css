@@ -17,6 +17,19 @@ body {
     text-align: center; 
 }
 
+::placeholder {
+    color: rgb(243, 243, 113);
+    background-color: rgb(0, 9, 128);
+    
+    text-align: center;
+    font-style: italic;
+}
+
+input:focus::placeholder {
+    color: rgb(0, 9, 128);
+    background-color: transparent;
+}
+
 .returnedStory {
     color: rgb(0, 9, 128);
     font-size: 24px;
@@ -39,19 +52,6 @@ body {
     color: rgb(250, 66, 143);
     background-color: rgb(0, 9, 128);
 }
-
-
-::placeholder {
-    color: rgb(243, 243, 113);
-    background-color: rgb(0, 9, 128);
-    text-align: center;
-    font-style: italic;
-}
-
-input:focus::placeholder {
-    color: rgb(0, 9, 128);
-    background-color: transparent;
-  }
 
 .submit-btn {
     color: rgb(250, 66, 143);

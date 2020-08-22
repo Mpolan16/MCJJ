@@ -1,12 +1,53 @@
 #templateEntry {
-    height: 250px;
-    width: 490px;
+    height: 165px;
+    /* width: 490px; */
     resize: none;
 }
+
+.form-group {
+    margin: 0 0 6px !important;
+}
+
 .noentry {
-    color: red
+    color: rgb(0, 9, 128);
+}
+
+.form-control {
+    border-width: 3px !important;
+    border-color: rgb(0, 9, 128)!important;
+    height: 40px!important;
+}
+
+#templateEntry {
+    min-height: 200px;
+    color: rgb(0, 9, 128);
+    font-size: 20px;
+    font-weight: 500;
+}
+
+label {
+    font-size: 24px;
+    font-weight: 500;
 }
 
 #btnSave {
-    width: 130px
+    font-size: 30px;
+    font-weight: 700;
+    color: rgb(0, 9, 128);
+    background-color: rgb(243, 243, 113);
+    margin-top: 30px;
+    border-radius: 10px;
+    border-width: 6px;
+    border-color: rgb(153, 151, 151);
+}
+
+#listPartsOfSpeech {
+    border-width: 3px !important;
+    border-color: rgb(0, 9, 128)!important;
+}
+
+.partOfSpeech {
+    color: rgb(243, 243, 113);
+    background-color: rgb(0, 9, 128);
+    font-weight: 700; 
 }
