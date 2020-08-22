@@ -1,8 +1,8 @@
-# TITLE
+# Story Fumble
 
 ## Description
 
-TITLE is a web app where the user can create funny stories. The user first chooses their language and category and then fills in words for the missing parts of speech in the story. After that, the user gets to choose a funny voice that reads the genarated story outloud.
+Story Fumble is a web app where the user can blindly enter words into blank spaces creating a funny story. The user first chooses their language and category and then fills in words for the missing parts of speech in the story. After that, the user gets to choose a funny voice that reads the generated story out loud.
 
 ## Table of Contents
 
@@ -13,12 +13,12 @@ TITLE is a web app where the user can create funny stories. The user first choos
 * [Questions](#questions)
 
 ## Usage
-Thumbnail (or include gif instead?):
-Deployed website:
-explaination (if gif no explaination?):
+https://story-fumble-app.herokuapp.com
+
+Thumbnail/video:
 
 ## Tools Used
-React.js, Javascript, JSX, , Firebase, ES6, Express, Node.js, MongoDB, Mongoose, Bootstrap, HTML, CSS
+React.js, Javascript, JSX, Firebase, Web Speech API, ES6, Express, Node.js, MongoDB, Mongoose, Bootstrap, React Bootstrap, HTML, CSS, Heroku, Atlas
 
 ## Questions
 
