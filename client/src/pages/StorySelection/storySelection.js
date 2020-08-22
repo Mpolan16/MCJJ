@@ -12,9 +12,6 @@ import {Link} from "react-router-dom";
 function StorySelection() {
     const [lang, setLang] = useState();
     const [cat, setCat] = useState();
-    const [checked, setChecked] = useState(false);
-    
-    
     
     function setLanguage(selectedValue) {
         setLang(selectedValue) 

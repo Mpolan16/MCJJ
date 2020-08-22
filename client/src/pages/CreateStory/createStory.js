@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from "react";
-// import SaveLib from "../components/saveLib";
-// import Voice from "../components/voice";
+import Card from "react-bootstrap/Card"
 import API from "../../utils/API.js";
-// import Accents from "../components/getAccents.js";
-// import Read from "../components/readStory.js";
 import SpeechContainer from "../../components/readStory.js"
 import { withRouter } from "react-router-dom";
 import './createStory.css';
-//import {Link} from "react-router-dom";  --use LINK if using to call another page
 
 
 function Create(props) {
@@ -86,27 +82,25 @@ function Create(props) {
     }
 
     return (
-        <div>
-            {
-                words && (
-                    <>
-                        {words.map((element, i) => {
-                            return <input className="word-input" data-index={i} key={i} placeholder={element} onChange={onChange} />
-                        })}
-                        <button onClick={() => onSubmit()} className="submit-btn">SUBMIT</button>
-                    </>
-                )
-            }
-            {
-                userStory && (
+        <div className = "container">
+            <Card id = "wordEntry">
+                <h3>Enter a word for each blank:</h3>
+                {words && (
+                        <>
+                            {words.map((element, i) => {
+                                return <input className="word-input" data-index={i} key={i} placeholder={element} onChange={onChange} />
+                            })}
+                            <button onClick={() => onSubmit()} className="submit-btn">SUBMIT</button>
+                        </>
+                )}
+            </Card>
+            {userStory && (
                     <SpeechContainer
                         story={userStory}
                         styledStory={styledTemplate}
                         onNewStory={onNewStory}
-
                     />
-                )
-            }
+            )}
 
         </div>
 
