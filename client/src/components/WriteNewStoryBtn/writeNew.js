@@ -6,10 +6,10 @@ import "./writeNew.css";
 
 function WriteNew() {
     return(
-        <Button className = "newStoriesBtn"><Image className = "btnImage"  src = "../../Assets/newTemplate.png"/>
+        <Button className = "newStoriesBtn">
+            <Image className = "btnImage"  src = "../../Assets/newTemplate.png"/>
             <p className = "btnText">Write Your Own Story</p>
         </Button>
-
     )
 }
 
