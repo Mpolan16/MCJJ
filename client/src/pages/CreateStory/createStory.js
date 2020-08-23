@@ -84,16 +84,20 @@ function Create(props) {
 
     return (
         <Container>
-            <Card id = "wordEntry">
+            <Card className="text-center" id = "wordEntry">
                 <h3>Enter a word for each blank:</h3>
-                {words && (
-                        <>
-                            {words.map((element, i) => {
-                                return <input className="word-input" data-index={i} key={i} placeholder={element} onChange={onChange} />
-                            })}
-                            <button onClick={() => onSubmit()} className="submit-btn">SUBMIT</button>
-                        </>
-                )}
+                    <Card.Body>
+                        {words && (
+                                <>
+                                    {words.map((element, i) => {
+                                        return <input className="word-input" data-index={i} key={i} placeholder={element} onChange={onChange} />
+                                    })}
+                                    <div>
+                                        <button  onClick={() => onSubmit()} className="submit-btn">SUBMIT</button>
+                                    </div>
+                                </>
+                        )}
+                    </Card.Body>
             </Card>
             {userStory && (
                     <SpeechContainer
