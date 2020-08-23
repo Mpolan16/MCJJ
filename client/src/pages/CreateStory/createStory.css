@@ -14,78 +14,81 @@ body {
 }
 
 .word-input {
-    color: rgb(0, 9, 128);
+    color: rgb(1, 181, 252);
     font-size: 18px;
     font-weight: 700;
     width: 300px;
-    margin: 8px auto 8px auto;
+    margin: 8px;
     border-width: 2px;
-    border-color: rgb(0, 9, 128);
+    border-color: rgb(1, 181, 252);
     line-height: 2;
     border-radius: 4px;
-    display: block;
+    
 }
 
 #wordEntry {
     width: 100%;
+    display: inline-block;
+    background-color: rgb(248, 252, 2) !important;
+    
 
 }
 
 ::placeholder {
-    color: rgb(243, 243, 113);
-    background-color: rgb(0, 9, 128);
+    color: rgb(248, 252, 2);
+    background-color: rgb(1, 181, 252);
     
     text-align: center;
     font-style: italic;
 }
 
 input:focus::placeholder {
-    color: rgb(0, 9, 128);
+    color: rgb(1, 181, 252);
     background-color: transparent;
 }
 
 .returnedStory {
-    color: rgb(0, 9, 128);
+    color: rgb(1, 181, 252);
     font-size: 24px;
     padding: 30px;
     margin: 40px;
     font-weight: 800;
-    border:2px solid rgb(0, 9, 128);
+    border:2px solid rgb(1, 181, 252);
 }
 
 .read-btns {
     font-size: 30px;
-    color: rgb(0, 9, 128);
-    background-color: rgb(243, 243, 113);
+    color: rgb(1, 181, 252);
+    background-color: rgb(248, 252, 2);
     margin: 5px;
     border-radius: 6px;
     border-width: 6px;
 }
 
 #new-story-btn {
-    color: rgb(250, 66, 143);
-    background-color: rgb(0, 9, 128);
+    color: rgb(233, 22, 252);
+    background-color: rgb(1, 181, 252);
     width: 250px;
     border-radius: 15px;
     border-style: double;
 }
 
 ::placeholder {
-    color:rgb(243, 243, 113);
-    background-color: rgb(0, 9, 128);
+    color:rgb(248, 252, 2);
+    background-color: rgb(1, 181, 252);
     text-align: center;
     font-style: italic;
 }
 
 input:focus::placeholder {
-    color: rgb(0, 9, 128);
+    color: rgb(1, 181, 252);
     background-color: transparent;
   }
 
 
 .submit-btn {
-    color: rgb(250, 66, 143);
-    background-color: rgb(0, 9, 128);
+    color: rgb(233, 22, 252);
+    background-color: rgb(1, 181, 252);
     margin: 10px;
     font-size: 24px;
     font-weight: 700;
@@ -102,19 +105,21 @@ input:focus::placeholder {
 }
 
 #voice-select {
-      color: rgb(0, 9, 128);
+      color: rgb(233, 22, 252) !important;
+      
+      border-color: rgb(1, 181, 252) !important;
       font-weight: 900;
       font-size: 20px;
       margin-top: 4px;
       height: 50px!important;
       border-width: 3px;
-      border-color: rgb(0, 9, 128);
+      border-color: rgb(1, 181, 252);
       width: 200px;
 }
 
 .slider-div {
     font-size: 30px;
-    color: rgb(0, 9, 128);
+    color: rgb(1, 181, 252);
     margin: 5px 20px 5px 20px;
 
 }
@@ -126,7 +131,7 @@ input:focus::placeholder {
     -webkit-appearance: none;
     width: 400px;
     height: 4px;
-    background: rgb(0, 9, 128);
+    background: rgb(1, 181, 252);
     outline: none;
     opacity: 0.7;
     margin: 50px;

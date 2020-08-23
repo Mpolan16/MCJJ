@@ -3,21 +3,25 @@
 }
 
 .noentry {
-    color: rgb(0, 9, 128);
+    color:  rgb(1, 181, 252);
+}
+
+.row {
+    margin-left: -180px !important;
 }
 
 .form-control {
     border-width: 3px !important;
-    border-color: rgb(0, 9, 128)!important;
+    border-color:  rgb(1, 181, 252)!important;
     height: 40px!important;
     font-size: 16px !important;
     font-weight: 500 !important;
-    color: rgb(0, 9, 128)!important;
+    color:  rgb(1, 181, 252)!important;
 }
 
 #templateEntry {
     min-height: 160px;
-    color: rgb(0, 9, 128);
+    color:  rgb(1, 181, 252);
     font-size: 20px;
     font-weight: 500;
     resize: none;
@@ -31,7 +35,7 @@ label {
 #btnSave {
     font-size: 30px;
     font-weight: 700;
-    color: rgb(0, 9, 128);
+    color:  rgb(1, 181, 252);
     background-color: rgb(243, 243, 113);
     margin-top: 30px;
     border-radius: 10px;
@@ -41,11 +45,11 @@ label {
 
 #listPartsOfSpeech {
     border-width: 3px !important;
-    border-color: rgb(0, 9, 128)!important;
+    border-color:  rgb(1, 181, 252)!important;
 }
 
 .partOfSpeech {
     color: rgb(243, 243, 113);
-    background-color: rgb(0, 9, 128);
+    background-color:  rgb(1, 181, 252);
     font-weight: 700; 
 }
