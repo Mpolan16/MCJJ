@@ -6,8 +6,9 @@
     color:  rgb(1, 181, 252);
 }
 
-.row {
+#templatePage{
     margin-left: -180px !important;
+    
 }
 
 .form-control {

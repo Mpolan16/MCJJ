@@ -422,7 +422,7 @@ function CreateTemplate() {
   return (
     <Container>
       <div className="drag-container">
-        <Row>
+        <Row id = "templatePage">
           <Col lg={1}>
           </Col>
           <Col lg={5}>

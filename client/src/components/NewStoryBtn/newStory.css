@@ -2,15 +2,22 @@ img {
     margin: 10px auto 10px auto !important;  
   }
 
+#newStoriesDiv {
+  margin-bottom: 200px;
+}
+
+
 .newStoriesBtn{
+    background: linear-gradient(cyan, blue);
     color:  rgb(250, 66, 143) !important;
     position: relative;
     display: inline-block;
-    align-items: center;
     width: 150px;
     padding: 0 !important;
-    border: 0px !important;
-    border-radius: 10px !important;  
+    border: 1px solid lightgrey !important;
+    box-shadow: 5px 10px 8px lightgray;
+    border-radius: 10px !important; 
+    z-index: 999;
   }
 
   .btnImage {
