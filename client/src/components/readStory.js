@@ -168,7 +168,7 @@ class SpeechContainer extends Component {
                 </section>
                 <section className="row d-flex justify-content-center">
                     <div >
-                        <button onClick={this.props.onNewStory} className="read-btns" id="new-story-btn"><Link to = "/home" >New Story </Link></button>
+                        <button onClick={this.props.onNewStory} className="read-btns" id="new-story-btn">NewStory</button>
                     </div>
                 </section>
 
