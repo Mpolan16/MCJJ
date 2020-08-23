@@ -1,36 +1,39 @@
-img {
-    margin: 10px auto 10px auto !important;  
-  }
 
 .newStoriesBtn{
-    color:  rgb(250, 66, 143) !important;
+    color:  rgb(248, 252, 2) !important;
+    background-color:  rgb(1, 181, 252) !important;
     position: relative;
     display: inline-block;
     align-items: center;
-    width: 150px;
+    width: 175px;
+    height: 250px;
     padding: 0 !important;
     border: 0px !important;
-    border-radius: 10px !important;  
+    border-radius: 10px !important; 
+    margin: 150px 10px 0px 0px !important;
+    z-index: 1; 
   }
-
+  
   .btnImage {
     width: 150px;
+    height: 175px;
     position: relative;
     display: inline-block;
     align-items: center;
-    margin: 0 !important;
+    margin: 10px auto 0 auto !important;
     border-radius: 10px;
   }
-
+  
   .btnText{
     position: absolute;
     z-index: 999;
     margin: 0 auto;
     left: 0;
     right: 0;
-    top: 40%; /* Adjust this value to move the positioned div up and down */
+    top: 10px; /* Adjust this value to move the positioned div up and down */
     text-align: center;
     width: 150px;
+    font-weight: bolder;
    
   
   }

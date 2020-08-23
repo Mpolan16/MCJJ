@@ -5,26 +5,35 @@ import "./home.css";
 import Image from 'react-bootstrap/Image';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-//import Column from 'react-bootstrap/Column';
 import NewStory from "../../components/NewStoryBtn/newStory";
 import WriteNew from "../../components/WriteNewStoryBtn/writeNew";
+import Col from 'react-bootstrap/Col'
 
 
 
 function Home() {
     return(
         <Container>
-            
+    
             <Row>
-                <Link to = "/storySelection">
-                    <NewStory />
-                </Link>
+                <Image id = "titleImg" src = "../../Assets/title.png" />
+            </Row>
+            <Row>
+                <Col md={3}>
+                    <Link to = "/storySelection">
+                        <NewStory />
+                    </Link>
+                </Col >
 
-                <Image src = "../../Assets/hero.png" fluid />
+                <Col md={5}>
+                    <Image id = "heroImg" src = "../../Assets/hero.png" />
+                </Col>
 
-                <Link to = "/createTemplate">
-                    <WriteNew />
-                </Link>
+                <Col md={3}>
+                    <Link to = "/createTemplate">
+                        <WriteNew />
+                    </Link>
+                </Col>
             </Row>
      
             
