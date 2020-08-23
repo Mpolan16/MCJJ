@@ -1,6 +1,6 @@
 
 ul {
-    background-color: rgb(41, 124, 233);
+    background-color: rgb(1, 181, 252) !important;
     width: 100%;
     height: 60px;
     text-align: end;
@@ -18,5 +18,6 @@ a {
 
 #title {
     float: left;
-    color:rgb(252, 2, 210) !important;
+    color:rgb(233, 22, 252) !important;
+    margin-left: 10px;;
 }

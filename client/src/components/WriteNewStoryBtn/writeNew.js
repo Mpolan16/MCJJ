@@ -8,7 +8,7 @@ function WriteNew() {
     return(
         <Button className = "newStoriesBtn">
             <Image className = "btnImage"  src = "../../Assets/newTemplate.png"/>
-            <p className = "btnText">Write Your Own Story</p>
+            <p className = "btnText">Write New Story</p>
         </Button>
     )
 }

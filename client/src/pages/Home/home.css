@@ -1,13 +1,28 @@
-img {
-  margin: 10px auto 10px auto !important;  
+#heroImg {
+  width: 350px !important;
+  margin: 10px 0px 10px -8px !important;
+  z-index: 0;
 }
+
+#titleImg {
+  margin: 10px !important;
+}
+
+
 .row {
-  color:  rgb(250, 66, 143) !important;
+  justify-content: center;
 }
-
-
 
 .container{
   height: 100%;
   padding-bottom: 100px;
+  margin: 10px auto 30px auto !important; 
+  justify-content: center; 
+
 }
+
+.col-md-5, .col-md-3 {
+  justify-content: center;
+  
+}
+
