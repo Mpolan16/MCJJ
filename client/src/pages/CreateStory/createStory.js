@@ -85,7 +85,7 @@ function Create(props) {
     return (
         <Container>
             <Card className="text-center" id = "wordEntry">
-                <h3>Enter a word for each blank:</h3>
+                <h3 id = "enterWords">Enter a word for each blank:</h3>
                     <Card.Body>
                         {words && (
                                 <>
