@@ -5,6 +5,9 @@
 .noentry {
     color:  rgb(1, 181, 252);
 }
+label {
+    color:  rgb(233, 22, 252);
+}
 
 #templatePage{
     margin-left: -180px !important;
@@ -41,7 +44,7 @@ label {
     margin-top: 30px;
     border-radius: 10px;
     border-width: 6px;
-    border-color: rgb(153, 151, 151);
+    border-color: lightgrey;
 }
 
 #listPartsOfSpeech {
