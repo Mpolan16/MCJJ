@@ -18,7 +18,7 @@ function Home() {
             <Row>
                 <Image id = "titleImg" src = "../../Assets/title.png" />
             </Row>
-            <Row>
+            <Row id = "homeHero"> 
                 <Col md={3}>
                     <Link to = "/storySelection">
                         <NewStory />
@@ -34,16 +34,7 @@ function Home() {
                         <WriteNew />
                     </Link>
                 </Col>
-            </Row>
-     
-            
-            
-            {/* <p>The Home Page is accessible by every signed in user.</p> */}
-           
-            
-            <br>
-            </br>
-           
+            </Row>      
         </Container>
         
     );

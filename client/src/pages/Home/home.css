@@ -1,11 +1,12 @@
 #heroImg {
   width: 350px !important;
-  margin: 10px 0px 10px -8px !important;
+  margin: 5px 0px 10px -8px !important;
   z-index: 0;
 }
 
 #titleImg {
   margin: 10px !important;
+  width: 80%;
 }
 
 
@@ -13,15 +14,21 @@
   justify-content: center;
 }
 
+#homeHero {
+  margin-left: 49px;
+
+}
+
 .container{
   height: 100%;
-  padding-bottom: 100px;
+
   margin: 10px auto 30px auto !important; 
 
 }
 
 .col-md-5, .col-md-3 {
   justify-content: center;
+  
   
 }
 

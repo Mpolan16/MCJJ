@@ -1,23 +1,111 @@
+* { margin:0; padding:0 }
+header {
+  
+  /* direct childen of the header
+     should wrap */
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
 
-ul {
+  /* float: left; */
+  color:rgb(248, 252, 2) !important;
+
+  /* margin-left: 10px;
+  display: block; */
+
+/* as a flex child, grow and
+   shrink as needed, use base-width
+   of 200px */
+   -webkit-flex: 1 1 200px;
+   flex: 1 1 200px;
+   
+   /* set logo height */
+   height: 55px;
+   
+   /* make it pretty */
+   background: lightgrey;
+   
+   /* make this element also a flex-parent */
+   display: -webkit-flex;
+   display: flex;
+   
+   /* direct childen (in this case, the :before)
+      should be vertically centered inside of logo */
+   -webkit-align-items: center;
+   align-items: center;
+   
+   /* direct childen (in this case, the :before)
+      should be horizontally centered inside of logo */
+   -webkit-justify-content: center;
+   justify-content: center;
+
+  
+}
+
+header nav {
     background-color: rgb(1, 181, 252) !important;
-    width: 100%;
-    height: 60px;
-    text-align: end;
+    height: 50px;
+/* as a flex child, grow and shrink as needed,
+     use current width as base width */
+     -webkit-flex: 1 1 auto;
+     flex: 1 1 auto;
+     
+     /* change padding not to add to overall width */
+     box-sizing: border-box;
+     /* set left and right padding to 10% of
+        available space */
+     padding: 0 10%;
+     
+     /* make this element also a flex-parent */
+     display: -webkit-flex;
+     display: flex;
+     
+     /* direct childen (in this case, the links)
+        should be vertically centered inside of this element */
+     -webkit-align-items: center;
+     align-items: center;
+   
+     /* direct childen (in this case, the links)
+        should be horizontally centered inside of this element */
+     -webkit-justify-content: space-around;
+     justify-content: space-around;
+
+
+
 }
 
-li {
+nav a {
+    /* margin: 10px;
+    display: inline-flex; */
+    -webkit-flex: 0 0 auto;
+    flex: 0 0 auto;
+    
+    /* change padding not to add to overall width */
+    box-sizing: border-box;
+  
+    /* hard code width and height */
+    width: 75px;
+    height: 30px;
+    
+    /* add 10px of margin to top, right, bottom, and left */
     margin: 10px;
-    display: inline-block;
-
-}
-
-a {
+    
+    /* make it pretty */
+    background: linear-gradient(cyan, blue);
+    border-radius: 10%;
+    border: 1px solid lightgrey;
     color: rgb(248, 252, 2) !important;
-}
+    text-decoration: none;
+    justify-content: center;
+    font-weight: bold;
+    
+    /* make this element also a flex-parent */
+    display: -webkit-flex;
+    display: flex;
+    
+    /* direct childen (in this case, the link text)
+       should be vertically centered inside of this element */
+    -webkit-align-items: center;
+    align-items: center;
 
-#title {
-    float: left;
-    color:rgb(248, 252, 2) !important;
-    margin-left: 10px;;
+
 }

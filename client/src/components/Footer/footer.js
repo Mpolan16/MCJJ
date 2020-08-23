@@ -3,9 +3,9 @@ import "./footer.css";
 
 function Footer() {
     return(
-        <div id = "footer">
+        <div id = "footerDiv">
             <footer className = "footer">
-                <p>Created by MCJJ Team</p>
+                <p id = "footerTxt">Created by MCJJ Team</p>
             </footer>
         </div>
     );

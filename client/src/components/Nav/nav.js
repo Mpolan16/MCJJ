@@ -7,34 +7,26 @@ import * as ROUTES from '../../constants/routes';
 import { AuthUserContext } from '../Session';
  
 const Nav = () => (
-  <div>
-   <Link to = {ROUTES.HOME}><h1 id = "title">Story Fumble</h1></Link> 
+  <header>
     <AuthUserContext.Consumer>
       {authUser =>
         authUser ? <NavigationAuth /> : <NavigationNonAuth />
       }
     </AuthUserContext.Consumer>
-  </div>
+  </header>
 );
 
  
 const NavigationAuth = () => (
-  <ul>
-    
-     
-      
-    <li>
-      <Link to={ROUTES.HOME}>Home</Link>
-    </li>
-    
-    <li>
-      <Link to={ROUTES.ACCOUNT}>Account</Link>
-    </li>
+  <nav>  
 
-    <li>
+      <Link to={ROUTES.ACCOUNT}>Account</Link>    
+
+      <Link to={ROUTES.HOME}>Home</Link>
+   
       <SignOutButton />
-    </li>
-  </ul>
+  
+  </nav>
 );
  
 const NavigationNonAuth = () => (

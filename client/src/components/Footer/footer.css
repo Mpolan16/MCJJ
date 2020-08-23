@@ -1,6 +1,6 @@
 footer {
-    background:  rgb(1, 181, 252);
-    color:   rgb(233, 22, 252);
+    background-color: rgb(1, 181, 252);
+    
     display: flex !important;
     position: fixed;
     bottom: 0;
@@ -8,5 +8,26 @@ footer {
     padding: 1em;
     width: 100%;
     justify-content: center !important;
-    z-index: 999;
+   
+    height: 45px;
+    vertical-align: middle;
+    padding: 8px !important;
+   
   }
+
+
+#footerDiv{
+  background-color: lightgrey;
+  color:   rgb(233, 22, 252);
+  height: 50px;
+  display: flex !important;
+  position: fixed;
+  bottom: 0;
+  margin: 1em 0 0 0 !important;
+  padding: 1em;
+  width: 100%;
+  justify-content: center !important;
+  vertical-align: middle;
+  padding: 8px !important;
+
+}

@@ -1,0 +1,11 @@
+.navA {
+    background: linear-gradient(cyan, blue);
+    border-radius: 10%;
+    border: 1px solid lightgrey;
+    color: rgb(248, 252, 2) !important;
+    text-decoration: none;
+    width: 75px;
+    height: 30px;
+    font-weight: bold;
+
+}
