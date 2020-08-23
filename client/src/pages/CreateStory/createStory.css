@@ -23,7 +23,7 @@ body {
     border-color: rgb(1, 181, 252);
     line-height: 2;
     border-radius: 4px;
-    
+    text-align: center;   
 }
 
 #wordEntry {

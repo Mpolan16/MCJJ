@@ -12,23 +12,23 @@
 
 .row {
   justify-content: center;
+  
 }
 
 #homeHero {
   margin-left: 49px;
-
+  z-index: 0;
 }
 
 .container{
   height: 100%;
-
+  
   margin: 10px auto 30px auto !important; 
 
 }
 
 .col-md-5, .col-md-3 {
   justify-content: center;
-  
-  
+
 }
 
