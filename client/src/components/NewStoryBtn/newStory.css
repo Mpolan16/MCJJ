@@ -17,7 +17,7 @@ img {
     border: 1px solid lightgrey !important;
     box-shadow: 5px 10px 8px lightgray;
     border-radius: 10px !important; 
-    z-index: 999;
+    z-index: 0;
   }
 
   .btnImage {
@@ -31,7 +31,7 @@ img {
 
   .btnText{
     position: absolute;
-    z-index: 999;
+   
     margin: 0 auto;
     left: 0;
     right: 0;
