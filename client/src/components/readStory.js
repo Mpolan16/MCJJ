@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Link } from "react";
 import '../pages/CreateStory/createStory.css';
 // import { translateAliases } from "../../../models/users";
 let synth = window.speechSynthesis;
@@ -168,7 +168,7 @@ class SpeechContainer extends Component {
                 </section>
                 <section className="row d-flex justify-content-center">
                     <div >
-                        <button onClick={this.props.onNewStory} className="read-btns" id="new-story-btn">New Story</button>
+                        <button onClick={this.props.onNewStory} className="read-btns" id="new-story-btn"><Link to = "/home" >New Story </Link></button>
                     </div>
                 </section>
 
