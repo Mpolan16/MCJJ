@@ -59,21 +59,23 @@ input:focus::placeholder {
     border:2px solid rgb(1, 181, 252);
 }
 
-.read-btns {
-    font-size: 30px;
-    color: rgb(1, 181, 252);
-    background-color: rgb(248, 252, 2);
-    margin: 5px;
-    border-radius: 6px;
-    border-width: 6px;
+.read-btns{
+    font-size: 22px !important;
+    font-weight: 700 !important;
+    color:  rgb(1, 181, 252) !important;
+    background-color:rgb(248, 252, 2) !important;
+    border-radius: 10px !important;
+    border-width: 6px !important;
+    border-color: lightgrey !important;
+    margin: 0px 5px 0px 5px !important; 
 }
 
 #new-story-btn {
-    color: rgb(233, 22, 252);
-    background-color: rgb(1, 181, 252);
-    width: 250px;
-    border-radius: 15px;
-    border-style: double;
+    color: rgb(233, 22, 252) !important;
+    background-color: rgb(1, 181, 252) !important;
+    width: 150px !important;
+    border-radius: 10px !important;
+    border-style: double !important;
 }
 
 ::placeholder {
@@ -90,13 +92,15 @@ input:focus::placeholder {
 
 
 .submit-btn {
-    color: rgb(233, 22, 252);
-    background-color: rgb(1, 181, 252);
+    border-color: lightgrey;
+    color: rgb(233, 22, 252) !important;
+    background-color: rgb(1, 181, 252) !important;
+    border-style: double !important;
     margin: 10px;
     font-size: 24px;
     font-weight: 700;
-    border-radius: 4px;
-    border-width: 4px;
+    border-radius: 10px;
+    border-width: 5px;
     width: 140px !important;
 }
 
