@@ -29,7 +29,8 @@
     border-radius: 10px;
     border-width: 6px;
     border-color: lightgrey;
-    width: 85px
+    width: 85px;
+    border: 5px solid lightgrey !important;
   }
 
   .closeBtn {
@@ -41,5 +42,6 @@
     border-radius: 10px;
     border-width: 6px;
     border-color: lightgrey;
-    width: 85px
+    width: 85px;
+    border: 5px solid lightgrey !important;
   }
