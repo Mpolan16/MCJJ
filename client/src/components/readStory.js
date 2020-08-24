@@ -1,5 +1,6 @@
 import React, { Component} from "react";
 import '../pages/CreateStory/createStory.css';
+import Button from "react-bootstrap/Button"
 // import { translateAliases } from "../../../models/users";
 let synth = window.speechSynthesis;
 let voices = [];
@@ -140,9 +141,9 @@ class SpeechContainer extends Component {
 
                 <section className="row voiceBtns d-flex justify-content-center" >
                     <div className="col-md-6">
-                        <button onClick={() => synth.cancel()} className="read-btns">Stop</button>
-                        <button onClick={() => this.Pause()} id="pause-btn" className="read-btns">Pause/Resume</button>
-                        <button onClick={() => this.Speak(this.props.story, voices)} className="read-btns">Read</button>
+                        <Button onClick={() => synth.cancel()} className="read-btns">Stop</Button>
+                        <Button onClick={() => this.Pause()} id="pause-btn" className="read-btns">Pause/Resume</Button>
+                        <Button onClick={() => this.Speak(this.props.story, voices)} className="read-btns">Read</Button>
                     </div>
 
                     <div className="form-group col-sm-3">
