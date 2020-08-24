@@ -18,7 +18,7 @@ function OneButtonSimpleModal(props) {
                 </div>
             </Modal.Body>
             <Modal.Footer>
-                <button className="btn btn-secondary mb-3" onClick={props.onClickClose}>
+                <button className="mb-3 closeBtn" onClick={props.onClickClose}>
                 {props.closeButtonText}
                 </button>
             </Modal.Footer>

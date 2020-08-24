@@ -356,7 +356,7 @@ function CreateTemplate() {
       if (stringFound >= 0) {
         //If a punctuation mark, or new line or other weirdness appears, HOPEFULLY it is a prompt at the end of sentence and/or a new paragraph/newline.
         //If found, replace the prompt part ONLY with ___, and save the prompt correctly.
-        stringFound = individualWords[i].search(/[.,/!$%^&*;:{}=\-`~()]/g)  //removed # and _ from this list.
+        stringFound = individualWords[i].search(/[.,/!$%^&*;:{}=`~()]/g)  //removed #, -, and _ from this list.
         if (stringFound > 0) {
           //if code gets in here, that means most likely a new line or a punctuation.
           //break it down into just the prompt piece (ex, so "##Noun." should be "##Noun" )
