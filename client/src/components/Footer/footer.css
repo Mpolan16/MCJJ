@@ -29,5 +29,5 @@ footer {
   justify-content: center !important;
   vertical-align: middle;
   padding: 8px !important;
-  
+  z-index: 999;
 }
