@@ -12,11 +12,34 @@
   }
 
   #header {
-    background: rgb(0, 9, 128);    
-    color:  rgb(250, 66, 143);
+    background: rgb(1, 181, 252);;    
+    color:  rgb(248, 252, 2);
+  }
+  
+  span {
+    color: white; 
+  }  
+
+  .selectBtn {
+    font-size: 20px;
+    font-weight: 700;
+    color:  rgb(1, 181, 252);
+    background-color: rgb(243, 243, 113);
+    margin-top: 30px;
+    border-radius: 10px;
+    border-width: 6px;
+    border-color: lightgrey;
+    width: 85px
   }
 
-  .close {
-    color: #fff; 
-    opacity: 1;
+  .closeBtn {
+    font-size: 20px;
+    font-weight: 700;
+    color:  rgb(1, 181, 252);
+    background-color: rgb(209, 209, 209);
+    margin-top: 30px;
+    border-radius: 10px;
+    border-width: 6px;
+    border-color: lightgrey;
+    width: 85px
   }

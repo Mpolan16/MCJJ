@@ -22,10 +22,10 @@ function TwoButtonDropdownModal(props) {
                 </div>
             </Modal.Body>
             <Modal.Footer>
-                <button className="btn btn-secondary mb-3" onClick={props.onClickClose}>
+                <button className="mb-3 closeBtn" onClick={props.onClickClose}>
                 {props.closeButtonText}
                 </button>
-                <button id={props.selectButtonText} className="btn btn-primary mb-3" onClick={props.onClickSelect}>
+                <button id={props.selectButtonText} className="mb-3 selectBtn" onClick={props.onClickSelect}>
                 {props.selectButtonText}
                 </button>
             </Modal.Footer>
