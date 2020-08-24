@@ -3,6 +3,8 @@ import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
 import ToggleButton from 'react-bootstrap/ToggleButton';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import Row from 'react-bootstrap/Row';
+import Image from 'react-bootstrap/Image';
 import Container from 'react-bootstrap/Container';
 import "./storySelection.css";
 import React, { useState } from "react";
@@ -36,36 +38,41 @@ function StorySelection() {
 
     return(
         <Container>
-          <Card>
-            <h3>Select Language:</h3>
-                <ToggleButtonGroup type="checkbox" name = "language" value = {lang} >
-                    <ToggleButton onClick = {setEnglish} className = "btns" value={"English"}>English</ToggleButton>
-                    <ToggleButton onClick = {setSpanish} className = "btns" value={"Spanish"}>Spanish</ToggleButton>
-                </ToggleButtonGroup>
-                <br />
-
-            <h3>Select Category:</h3>
-                <ToggleButtonGroup type="checkbox" name = "category" value = {cat} >
-                    <ToggleButton onClick = {setFunny} className = "btns" value={"Funny"}>Funny</ToggleButton>
-                    <ToggleButton onClick = {setScary} className = "btns" value={"Scary"}>Scary</ToggleButton>
-                    {lang === "Spanish" && <ToggleButton onClick = {setCuentos} className = "btns" id = "cuentosBtn" value={"Cuentos"}>Cuentos</ToggleButton>}
-                </ToggleButtonGroup>
-          </Card>
-
+            
            
-        <div id = "createStory">
-            <Button className = "btns" >
-                <Link 
-                to={{
-                    pathname: '/create',
-                    state: {lang, cat}
-                    }}
-                >
-                    Now enter the missing words
-                </Link>
-            </Button> 
-        </div>
-           
+            <Card>
+                <h3>Select Language:</h3>
+                    <ToggleButtonGroup type="checkbox" name = "language" value = {lang} >
+                        <ToggleButton onClick = {setEnglish} className = "btns" value={"English"}>English</ToggleButton>
+                        <ToggleButton onClick = {setSpanish} className = "btns" value={"Spanish"}>Spanish</ToggleButton>
+                    </ToggleButtonGroup>
+                    <br />
+
+                <h3>Select Category:</h3>
+                    <ToggleButtonGroup type="checkbox" name = "category" value = {cat} >
+                        <ToggleButton onClick = {setFunny} className = "btns" value={"Funny"}>Funny</ToggleButton>
+                        <ToggleButton onClick = {setScary} className = "btns" value={"Scary"}>Scary</ToggleButton>
+                        {lang === "Spanish" && <ToggleButton onClick = {setCuentos} className = "btns" id = "cuentosBtn" value={"Cuentos"}>Cuentos</ToggleButton>}
+                    </ToggleButtonGroup>
+            </Card>
+
+            <Row id = "btnRow" >
+                <Card id = "createBtnCard">
+                    <Image id = "createChar" src = "../../Assets/create.png" />
+                        <div id = "createStory">
+                            <Button className = "btns" >
+                                <Link id = "createBtn"
+                                to={{
+                                    pathname: '/create',
+                                    state: {lang, cat}
+                                    }}
+                                >
+                                    Now enter the missing words
+                                </Link>
+                            </Button> 
+                        </div>
+                </Card>        
+            </Row>
         </Container>
     );
 }

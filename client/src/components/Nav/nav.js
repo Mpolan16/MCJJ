@@ -8,11 +8,13 @@ import { AuthUserContext } from '../Session';
  
 const Nav = () => (
   <header>
-    <AuthUserContext.Consumer>
-      {authUser =>
-        authUser ? <NavigationAuth /> : <NavigationNonAuth />
-      }
-    </AuthUserContext.Consumer>
+      <nav>
+        <AuthUserContext.Consumer>
+          {authUser =>
+            authUser ? <NavigationAuth /> : <NavigationNonAuth />
+          }
+        </AuthUserContext.Consumer>
+      </nav>
   </header>
 );
 
@@ -30,14 +32,13 @@ const NavigationAuth = () => (
 );
  
 const NavigationNonAuth = () => (
-  <ul>
-    <li>
+  <nav>
       <Link to={ROUTES.LANDING}>Home</Link>
-    </li>
-    <li>
+  
+  
       <Link to={ROUTES.SIGN_IN}>Sign In</Link>
-    </li>
-  </ul>
+  </nav>
+ 
 );
  
 export default Nav;
