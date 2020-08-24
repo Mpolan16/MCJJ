@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
- 
+import "./signUp.css"
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes.js';
+import Container from "react-bootstrap/Container"
  
 const SignUp = () => (
-  <div>
+  <Container>
     <h1>SignUp</h1>
     <SignUpForm />
-  </div>
+  </Container>
 );
  
 const INITIAL_STATE = {
@@ -72,8 +73,9 @@ class SignUpFormBase extends Component {
     username === '';
     
     return (
-      <form onSubmit={this.onSubmit}>
+      <form id = "signUp" onSubmit={this.onSubmit}>
         <input
+          className = "signBtns"
           name="username"
           value={username}
           onChange={this.onChange}
@@ -81,6 +83,7 @@ class SignUpFormBase extends Component {
           placeholder="Full Name"
         />
         <input
+          className = "signBtns"
           name="email"
           value={email}
           onChange={this.onChange}
@@ -88,6 +91,7 @@ class SignUpFormBase extends Component {
           placeholder="Email Address"
         />
         <input
+          className = "signBtns"
           name="passwordOne"
           value={passwordOne}
           onChange={this.onChange}
@@ -95,6 +99,7 @@ class SignUpFormBase extends Component {
           placeholder="Password"
         />
         <input
+          className = "signBtns"
           name="passwordTwo"
           value={passwordTwo}
           onChange={this.onChange}

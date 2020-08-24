@@ -9,12 +9,12 @@ import * as ROUTES from '../../constants/routes';
 import Container from "react-bootstrap/Container"
  
 const SignInPage = () => (
-  <div>
+  <Container>
     <h1>SignIn</h1>
     <SignInForm />
     <PasswordForgetLink />
     <SignUpLink />
-  </div>
+  </Container>
 );
  
 const INITIAL_STATE = {
@@ -59,6 +59,7 @@ class SignInFormBase extends Component {
       <Container>
         <form onSubmit={this.onSubmit}>
           <input
+            className = "signBtns"
             name="email"
             value={email}
             onChange={this.onChange}
@@ -66,6 +67,7 @@ class SignInFormBase extends Component {
             placeholder="Email Address"
           />
           <input
+            className = "signBtns"
             name="password"
             value={password}
             onChange={this.onChange}
