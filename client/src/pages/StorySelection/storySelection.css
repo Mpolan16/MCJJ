@@ -1,29 +1,58 @@
 
 .btns {
-    color:rgb(250, 66, 143) !important;
-    font-size: 28px;
-    font-weight: 700;
+    color:rgb(248, 252, 2) !important;
     width: 300px;
     margin: 8px;
     border-width: 5px;
-    border-color: rgb(0, 9, 128) !important;
-    background-color:  rgb(0, 9, 128) !important;
+    border-color: rgb(1, 181, 252) !important;
+    background-color:  rgb(1, 181, 252) !important;
     text-align: center; 
     border-radius: 3px !important;
+    font-weight:  bolder !important;
+    font-size: 22px !important;
+}
+
+
+#btnRow {
+   margin-top: 0px !important;
+}
+
+#createBtn {
+    color: rgb(248, 252, 2) !important;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#createBtnCard {
+    background-color: white !important;
+    border: none !important;
+    width: 600px !important;
+    flex-direction: row;
+    margin-left: 175px;
+    margin-top: 0px !important;
+}
+
+#createChar {
+    padding-top: 30px !important;
+    transform: rotate(15deg);
+    margin-right: 10px !important;
 }
 
 #createStory {
     margin: 10px auto 10px auto !important;
     width: 316px !important;
-    border-color: rgb(241, 223, 78) !important;
-    background-color:  rgb(241, 223, 78) !important;
+    height: 63px !important;
+    color: rgb(248, 252, 2) !important;
+    border-color:  rgb(233, 22, 252) !important;
+    background-color:   rgb(233, 22, 252) !important;
 }
 
 .card {
     padding: 25px;
     margin: 55px auto 15px auto;
     width: 500px;
-    background:rgb(252, 244, 188) !important ;
+    background:rgb(248, 252, 2) !important ;
+    color: rgb(233, 22, 252);
 }
 
 
