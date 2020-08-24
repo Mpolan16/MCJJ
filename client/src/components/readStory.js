@@ -1,4 +1,4 @@
-import React, { Component, Link } from "react";
+import React, { Component} from "react";
 import '../pages/CreateStory/createStory.css';
 // import { translateAliases } from "../../../models/users";
 let synth = window.speechSynthesis;

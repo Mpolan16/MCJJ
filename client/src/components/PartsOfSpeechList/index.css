@@ -1,6 +1,8 @@
 #partsOfSpeechDiv {
     /* margin-top: 100px;     */   
     text-align: center; 
+    color:  rgb(233, 22, 252) !important;
+
 }
 
 #listPartsOfSpeech {
@@ -26,3 +28,4 @@
     -ms-transform: scale(1.1);
     transform: scale(1.1);
   }
+

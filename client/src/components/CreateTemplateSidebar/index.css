@@ -3,7 +3,7 @@
     font-size: 24px!important;
     color: rgb(248, 252, 2)!important;
     background-color:  rgb(1, 181, 252)!important;
-    border-color: rgb(153, 151, 151)!important;
+    border-color: lightgrey !important;
     border-radius: 6px!important;
     border-width: 4px!important;
     margin: 5px!important;
@@ -12,4 +12,5 @@
 #sideBarDiv {
     text-align: center; 
     width: 250px;
+    color:  rgb(233, 22, 252) !important;
 }

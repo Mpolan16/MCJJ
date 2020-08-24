@@ -124,7 +124,8 @@ input:focus::placeholder {
 .slider-div {
     font-size: 30px;
     color: rgb(1, 181, 252);
-    margin: 5px 20px 5px 20px;
+    margin: 5px 20px 5px 10px;
+    padding-left: 0px !important;
 
 }
 

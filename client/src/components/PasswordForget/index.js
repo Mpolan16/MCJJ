@@ -50,6 +50,7 @@ class PasswordForgetFormBase extends Component {
     return (
       <form onSubmit={this.onSubmit}>
         <input
+          className = "signBtns"
           name="email"
           value={this.state.email}
           onChange={this.onChange}

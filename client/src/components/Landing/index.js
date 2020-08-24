@@ -7,10 +7,13 @@ import Row from 'react-bootstrap/Row';
 const Landing = () => (
   <div>
     <Container>
+            <Row>
+                <Image id = "titleImg" src = "../../Assets/title.png" />
+            </Row>
             
             <Row>
 
-                <Image src = "../../Assets/hero.png" fluid />
+                <Image src = "../../Assets/hero.png" />
 
             </Row>
            

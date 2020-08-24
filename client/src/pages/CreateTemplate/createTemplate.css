@@ -40,7 +40,7 @@ label {
     font-size: 30px;
     font-weight: 700;
     color:  rgb(1, 181, 252);
-    background-color: rgb(243, 243, 113);
+    background-color:rgb(248, 252, 2);
     margin-top: 30px;
     border-radius: 10px;
     border-width: 6px;
@@ -53,7 +53,7 @@ label {
 }
 
 .partOfSpeech {
-    color: rgb(243, 243, 113);
+    color:rgb(248, 252, 2);
     background-color:  rgb(1, 181, 252);
     font-weight: 700; 
 }
