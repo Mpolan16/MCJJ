@@ -45,6 +45,7 @@
     color: rgb(248, 252, 2) !important;
     border-color:  rgb(233, 22, 252) !important;
     background-color:   rgb(233, 22, 252) !important;
+    z-index: 1;
 }
 
 .card {
