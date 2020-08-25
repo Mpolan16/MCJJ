@@ -1,5 +1,6 @@
 import React from "react";
 import './index.css';
+import Image from "react-bootstrap/Image";
 
 function CreateTemplateSidebar(props) {
   return (
@@ -16,6 +17,10 @@ function CreateTemplateSidebar(props) {
         <button id="btnDelete" className="btn btn-primary m-1 sidebarbtn" onClick={props.deleteTemplate}>
             Delete Template
         </button>
+
+        <div>
+          <Image id = "templateChar" src = "../../Assets/template.png" />
+        </div>
     </div>
   );
 }
