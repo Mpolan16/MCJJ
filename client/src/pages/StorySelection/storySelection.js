@@ -59,7 +59,7 @@ function StorySelection() {
             <Row id = "btnRow" >
                 <Card id = "createBtnCard">
                     <Image id = "createChar" src = "../../Assets/create.png" />
-                        <div id = "createStory">
+                        <div id = "createStoryDiv">
                             <Button id = "createBtn" className = "btns" >
                                 <Link id = "createLink"
                                 to={{
