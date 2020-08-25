@@ -10,6 +10,7 @@
     border-radius: 3px !important;
     font-weight:  bolder !important;
     font-size: 22px !important;
+    
 }
 
 
@@ -17,10 +18,14 @@
    margin-top: 0px !important;
 }
 
-#createBtn {
+#createLink {
     color: rgb(248, 252, 2) !important;
     font-weight: bold;
     font-size: 20px;
+}
+
+#createBtn {
+    margin-top: 11px;
 }
 
 #createBtnCard {
@@ -40,11 +45,14 @@
 
 #createStory {
     margin: 10px auto 10px auto !important;
-    width: 316px !important;
-    height: 63px !important;
+    width: 330px !important;
+    height: 69px !important;
     color: rgb(248, 252, 2) !important;
     border-color:  rgb(233, 22, 252) !important;
     background-color:   rgb(233, 22, 252) !important;
+    z-index: 1;
+    text-align: center;
+   
 }
 
 .card {

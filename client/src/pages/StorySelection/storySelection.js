@@ -60,8 +60,8 @@ function StorySelection() {
                 <Card id = "createBtnCard">
                     <Image id = "createChar" src = "../../Assets/create.png" />
                         <div id = "createStory">
-                            <Button className = "btns" >
-                                <Link id = "createBtn"
+                            <Button id = "createBtn" className = "btns" >
+                                <Link id = "createLink"
                                 to={{
                                     pathname: '/create',
                                     state: {lang, cat}
