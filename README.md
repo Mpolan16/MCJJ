@@ -15,7 +15,7 @@ Story Fumble is a web app where the user can blindly enter words into blank spac
 ## Usage
 https://story-fumble-app.herokuapp.com
 
-Thumbnail/video:
+![storyfumble](./client/public/Assets/Thumbnail.png)
 
 ## Tools Used
 React.js, Javascript, JSX, Firebase, Web Speech API, ES6, Express, Node.js, MongoDB, Mongoose, Bootstrap, React Bootstrap, HTML, CSS, Heroku, Atlas
